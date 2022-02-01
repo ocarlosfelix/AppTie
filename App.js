@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
-import Login from './src/components/Login';
+import Login_view from './src/components/Login_view';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Login />
+      <Login_view />
     </View>
   );
 }
