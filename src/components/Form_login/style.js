@@ -2,16 +2,14 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
     
-    formBox:{
+    redesLogBox:{
         alignItems:"center",
         justifyContent:"center",
-        paddingTop:16,
         position:"relative",
         
 
 
     }
-
 
 });
 
