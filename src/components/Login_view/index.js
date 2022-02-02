@@ -27,7 +27,7 @@ export default function Login_view(){
             </View>
 
             <View>
-                <Text style={styles.textStyle}>Clique aqui para fazer o seu cadastro</Text>
+                <Text style={styles.textStyleCadastro}>Clique aqui para fazer o seu cadastro</Text>
             </View>
         </View>
         
