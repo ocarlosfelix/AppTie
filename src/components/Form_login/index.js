@@ -1,31 +1,25 @@
 import React from "react"
-import { View, Text, TextInput, Button, Image } from "react-native"
-import Logogoogle from '../../images/googlelogin.png'
-import Logofb from '../../images/fblogin.png'
+import { View, Text, TextInput, Button, TouchableOpacity } from "react-native"
+
 import styles from "./style"
 
 
 export default function Form_login(){
     return(
-        <View style={styles.redesLogBox}>
+        <View>
             <View >
-                <Text>Email</Text>
-                <TextInput
+                <TextInput style={styles.input} 
                 placeholder="seuemail@email.com"></TextInput>
 
-                <Text>Senha</Text>
-                <TextInput
+                <TextInput style={styles.input} 
                 placeholder="******"></TextInput>
 
-                <Button title="Entrar"/>
+                <TouchableOpacity style={styles.buttonStyle}
+                    onPress={() => validationLogin()}>
+                <Text style={styles.textButtonStyle}>Entrar</Text>
+                </TouchableOpacity>
                 
-                <View>
-                    <Image source={Logogoogle} />
-                </View>
 
-                <View>
-                    <Image source={Logofb}/>
-                </View>
                 
             </View>
 
