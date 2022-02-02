@@ -16,7 +16,7 @@ export default function Form_login(){
 
                 <TouchableOpacity style={styles.buttonStyle}
                     onPress={() => validationLogin()}>
-                <Text style={styles.textButtonStyle}>Entrar</Text>
+                <Text style={styles.textButtonStyle}>ENTRAR</Text>
                 </TouchableOpacity>
                 
 
