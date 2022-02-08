@@ -1,54 +1,57 @@
 import React from "react"
 import ProfilePicture from '../../images/logoaptmaca.png'
+import lista from "../../lista"
+import { pedirmusicon } from "../../images/pedirmusicon.png"
 
-import { MusicList, HeaderContainer, ProfilePic, Username, TextContadorPedidos, ContadorPedidos,
-    SearchBar, SearchBoxIcon, SearchBoxText, MusicRow, 
-    MusicName, MusicArtist, MusicTag, PedirMusica, PedirMusicaIcon, 
+import { MusicList, Header, ProfileBox, ProfilePic, Username, ContadorBox, PedidosText, PedidosNum,
+    SearchBar, SearchBoxIcon, SearchBoxText, Scroll, MusicRow, Item, 
+    ItemText, MusicName, MusicArtist, MusicTag, PedirMusica, PedirMusicaIcon, 
     PedirMusicaText, SugerirMusica, SugerirMusicaIcon, 
     SugerirMusicaText, FooterMenu } from '../MusicList_view/styles'
 
 
 export default function MusicList_view() {
     return (       
-       <MusicList>
-           <HeaderContainer>
-            <ProfilePic source={ProfilePicture} />
-           <Username>Fulano de Tal</Username>
-           <ContadorPedidos>Você já pediu: 100 músicas</ContadorPedidos>
-           </HeaderContainer>
+        <MusicList>
+            <Header>
+                <ProfileBox>
+                    <ProfilePic source={ProfilePicture} />
+                    <Username>Fulano de Tal</Username>
+                </ProfileBox>
+
+                <ContadorBox>
+                    <PedidosText>Você já pediu:</PedidosText>
+                    <PedidosNum> 100 músicas</PedidosNum>
+                </ContadorBox>
+            </Header>
 
         <SearchBar  placeholder="Buscar por nome da música, artista ou gênero">
 
         </SearchBar>
 
+        <PedirMusica source={pedirmusicon} />
+        <PedirMusica source={pedirmusicon} />
+
+        <Scroll>
         <MusicRow>
-            <MusicName>Medo da Chuva</MusicName>
-            <MusicArtist>Falamansa</MusicArtist>
+            {lista.map((item, index)=>{
+                return(
+                    <Item key={index}>
+                        <MusicName>{item.musica}</MusicName>
+                        <MusicArtist>{item.artista}</MusicArtist>
+                        <MusicTag>{item.tag1}</MusicTag>
+                    </Item>
+                )
+            })}
         </MusicRow>
+        </Scroll>
 
-        <MusicRow>
-            <MusicName>Medo da Chuva</MusicName>
-            <MusicArtist>Falamansa</MusicArtist>
-        </MusicRow>
-
-        <MusicRow>
-            <MusicName>Medo da Chuva</MusicName>
-            <MusicArtist>Falamansa</MusicArtist>
-        </MusicRow>
-
-        <MusicRow>
-            <MusicName>Medo da Chuva</MusicName>
-            <MusicArtist>Falamansa</MusicArtist>
-        </MusicRow>
-
-        <MusicRow>
-            <MusicName>Medo da Chuva</MusicName>
-            <MusicArtist>Falamansa</MusicArtist>
-        </MusicRow>
+        <FooterMenu>
+            <PedirMusica source={pedirmusicon} />
+            <PedirMusica source={pedirmusicon} />
+        </FooterMenu>
 
 
-
-        <FooterMenu/>
        </MusicList> 
 
     )

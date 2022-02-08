@@ -9,9 +9,9 @@ const MainStack = createStackNavigator();
 export default () => {
     return (
         <MainStack.Navigator>
-            
-            <MainStack.Screen name="Login" component={LoginScreen}/>
             <MainStack.Screen name="MusicList" component={MusicListScreen}/>
+            <MainStack.Screen name="Login" component={LoginScreen}/>
+            
             
 
         </MainStack.Navigator>
