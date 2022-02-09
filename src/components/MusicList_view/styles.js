@@ -1,9 +1,8 @@
 import styled from 'styled-components/native'
-import ActionButton from 'react-native-action-button'
-import AntDesign from '@expo/vector-icons'
 
 export const MusicList = styled.View`
 flex:1;
+padding-top:30px;
 alignItems:center;
 background-color:#fff;
 `

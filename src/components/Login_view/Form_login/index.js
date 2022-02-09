@@ -9,7 +9,7 @@ export default function Form_login(){
     const navigation = useNavigation();
 
     const handleSobreClick = () => {
-        navigation.navigate('MusicList');
+        navigation.navigate('Home');
     }
     
     return(

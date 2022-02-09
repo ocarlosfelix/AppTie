@@ -1,6 +1,6 @@
 import React from "react"
 import ProfilePicture from '../../images/logoaptmaca.png'
-import lista from "../../lista"
+import lista from "./lista"
 import SearchIcon from "../../images/searchicon.png"
 import FloatingButton from "./floatingbutton"
 
