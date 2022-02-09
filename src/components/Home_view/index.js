@@ -44,12 +44,17 @@ export default function Home_view() {
             
             <BtnVerdeClaro
                     >
-                    <BtnText>Contratar</BtnText>
+                    <BtnText>Sobre a Banda</BtnText>
             </BtnVerdeClaro>
             
             <BtnVerdeClaro
                     >
                     <BtnText>Redes Sociais</BtnText>
+            </BtnVerdeClaro>
+
+            <BtnVerdeClaro
+                    >
+                    <BtnText>Contratar</BtnText>
             </BtnVerdeClaro>
 
             <BtnVerdeEscuro
