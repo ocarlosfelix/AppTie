@@ -20,24 +20,32 @@ export default function FormContratar(){
             <Emailinput 
                 placeholder="seuemail@email.com"></Emailinput>
 
-<FormTag>Nome Completo</FormTag>
+<FormTag>Telefone para Contato</FormTag>
 
 <Emailinput 
     placeholder="seuemail@email.com"></Emailinput>
 
-<FormTag>Nome Completo</FormTag>
+<FormTag>Data do Evento</FormTag>
 
 <Emailinput 
     placeholder="seuemail@email.com"></Emailinput>
 
-<FormTag>Nome Completo</FormTag>
+<FormTag>Endereço do Evento</FormTag>
+
+<Emailinput 
+    placeholder="seuemail@email.com"></Emailinput>
+
+<FormTag>Hora de Início do Show</FormTag>
+
+<Emailinput 
+    placeholder="seuemail@email.com"></Emailinput>
+
+<FormTag>Duração do Show</FormTag>
 
 <Emailinput 
     placeholder="seuemail@email.com"></Emailinput>
 
 
-            <Passwordinput
-                placeholder="******"></Passwordinput>
 
                 <BtnEntrar 
                     onPress={ handleSobreClick }>
