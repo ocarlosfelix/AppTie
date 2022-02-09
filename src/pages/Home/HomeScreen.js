@@ -1,31 +1,41 @@
 import React from "react"
-import ProfilePicture from '../../images/logoaptmaca.png'
-import FloatingButton from "./floatingbutton"
+import HeaderComponent from '../../components/HeaderComponent/index'
+import FloatingButton from "../../components/FloatingButton/floatingbutton"
 import { useNavigation } from '@react-navigation/native'
 
-import { Homeview, Header, ProfileBox, ProfilePic, Username,
-    BtnVerdeClaro, BtnVerdeEscuro, BtnText, ContadorContainer, ShowsContainer,
+import { Homeview, BtnVerdeClaro, BtnVerdeEscuro, 
+    BtnText, ContadorContainer, ShowsContainer,
     TextContador, PedidosContainer
-} from "./styles"
+} from "../../pages/Home/styles"
 
-export default function Home_view() {
+export default function HomeScreen() {
 
     const navigation = useNavigation();
 
-    const handleSobreClick = () => {
+    const SobreClickPedirMusica = () => {
         navigation.navigate('PedirMusica');
+    }
+
+    const SobreClickSobre = () => {
+        navigation.navigate('Sobre');
+    }
+
+    const SobreClickRedes = () => {
+        navigation.navigate('Redes');
+    }
+
+    const SobreClickContratar = () => {
+        navigation.navigate('Contratar');
+    }
+
+    const SobreClickAreaBanda = () => {
+        navigation.navigate('AreaBanda');
     }
 
     return (       
         <Homeview>
 
-            <Header>
-                <ProfileBox>
-                    <ProfilePic source={ProfilePicture} />
-                    <Username>Fulano de Tal</Username>
-                </ProfileBox>
-
-            </Header>
+            <HeaderComponent/>
 
             <ContadorContainer>
                 <ShowsContainer>
@@ -37,28 +47,23 @@ export default function Home_view() {
                 </PedidosContainer>
             </ContadorContainer>
             
-            <BtnVerdeClaro
-                    onPress={ handleSobreClick }>
+            <BtnVerdeClaro onPress={ SobreClickPedirMusica }>
                     <BtnText>Pedir Musica</BtnText>
             </BtnVerdeClaro>
             
-            <BtnVerdeClaro
-                    >
+            <BtnVerdeClaro onPress={ SobreClickSobre }>
                     <BtnText>Sobre a Banda</BtnText>
             </BtnVerdeClaro>
             
-            <BtnVerdeClaro
-                    >
+            <BtnVerdeClaro onPress={ SobreClickRedes }>
                     <BtnText>Redes Sociais</BtnText>
             </BtnVerdeClaro>
 
-            <BtnVerdeClaro
-                    >
+            <BtnVerdeClaro onPress={ SobreClickContratar }>
                     <BtnText>Contratar</BtnText>
             </BtnVerdeClaro>
 
-            <BtnVerdeEscuro
-                   >
+            <BtnVerdeEscuro onPress={ SobreClickAreaBanda }>
                     <BtnText>Área da Banda</BtnText>
             </BtnVerdeEscuro>
 

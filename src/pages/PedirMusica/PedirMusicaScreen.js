@@ -1,30 +1,20 @@
 import React from "react"
-import ProfilePicture from '../../images/logoaptmaca.png'
-import lista from "./lista"
+import lista from "../../components/ListaMus/lista"
 import SearchIcon from "../../images/searchicon.png"
-import FloatingButton from "./floatingbutton"
+import FloatingButton from "../../components/FloatingButton/floatingbutton"
+import HeaderComponent from "../../components/HeaderComponent/index"
 
-import { MusicList, Header, ProfileBox, ProfilePic, Username, ContadorBox, PedidosText, PedidosNum,
-    SearchContainer, SearchBar, SearchBoxIcon, Scroll, MusicRow, Item, 
+import { MusicList, SearchContainer, SearchBar, SearchBoxIcon, Scroll, MusicRow, Item, 
     MusicIdContainer, MusicName, MusicArtist, TagContainer, PrimeiraTag, SegundaTag, 
     BtnPedirMusica, TextPedirMusica } from './styles'
 
 
-export default function PedirMusica_view() {
+export default function PedirMusicaScreen() {
     return (       
         <MusicList>
 
-            <Header>
-                <ProfileBox>
-                    <ProfilePic source={ProfilePicture} />
-                    <Username>Fulano de Tal</Username>
-                </ProfileBox>
+            <HeaderComponent/>
 
-                <ContadorBox>
-                    <PedidosText>Você já pediu:</PedidosText>
-                    <PedidosNum> 100 músicas</PedidosNum>
-                </ContadorBox>
-            </Header>
         <SearchContainer>
             <SearchBar  placeholder="Buscar por nome da música, artista ou gênero"/>
                 <SearchBoxIcon source={SearchIcon} />
