@@ -1,18 +1,20 @@
 import React from "react"
 import ProfilePicture from '../../images/logoaptmaca.png'
 import lista from "../../lista"
-import { pedirmusicon } from "../../images/pedirmusicon.png"
+import SearchIcon from "../../images/searchicon.png"
+import FloatingButton from "./floatingbutton"
 
 import { MusicList, Header, ProfileBox, ProfilePic, Username, ContadorBox, PedidosText, PedidosNum,
-    SearchBar, SearchBoxIcon, SearchBoxText, Scroll, MusicRow, Item, 
-    ItemText, MusicName, MusicArtist, MusicTag, PedirMusica, PedirMusicaIcon, 
-    PedirMusicaText, SugerirMusica, SugerirMusicaIcon, 
+    SearchContainer, SearchBar, SearchBoxIcon, SearchBoxText, Scroll, MusicRow, Item, 
+    ItemText, MusicIdContainer, MusicName, MusicArtist, TagContainer, PrimeiraTag, SegundaTag, 
+    BtnPedirMusica, TextPedirMusica , SugerirMusica, BtnSugerirMusica, 
     SugerirMusicaText, FooterMenu } from '../MusicList_view/styles'
 
 
 export default function MusicList_view() {
     return (       
         <MusicList>
+
             <Header>
                 <ProfileBox>
                     <ProfilePic source={ProfilePicture} />
@@ -24,33 +26,38 @@ export default function MusicList_view() {
                     <PedidosNum> 100 músicas</PedidosNum>
                 </ContadorBox>
             </Header>
-
-        <SearchBar  placeholder="Buscar por nome da música, artista ou gênero">
-
-        </SearchBar>
-
-        <PedirMusica source={pedirmusicon} />
-        <PedirMusica source={pedirmusicon} />
+        <SearchContainer>
+            <SearchBar  placeholder="Buscar por nome da música, artista ou gênero"/>
+                <SearchBoxIcon source={SearchIcon} />
+        
+        </SearchContainer>
 
         <Scroll>
         <MusicRow>
             {lista.map((item, index)=>{
                 return(
                     <Item key={index}>
-                        <MusicName>{item.musica}</MusicName>
-                        <MusicArtist>{item.artista}</MusicArtist>
-                        <MusicTag>{item.tag1}</MusicTag>
+                        <MusicIdContainer>
+                            <MusicName>{item.musica}</MusicName>
+                            <MusicArtist>{item.artista}</MusicArtist>
+                        </MusicIdContainer>
+                        <TagContainer>
+                            <PrimeiraTag>{item.tag1}</PrimeiraTag>
+                            <SegundaTag>{item.tag2}</SegundaTag>
+                        </TagContainer>
+                        
+                        <BtnPedirMusica>
+                            <TextPedirMusica>
+                                Toca Essa!
+                            </TextPedirMusica>
+                        </BtnPedirMusica>
                     </Item>
                 )
             })}
         </MusicRow>
         </Scroll>
 
-        <FooterMenu>
-            <PedirMusica source={pedirmusicon} />
-            <PedirMusica source={pedirmusicon} />
-        </FooterMenu>
-
+            <FloatingButton style={{ bottom:100 }}/>
 
        </MusicList> 
 
