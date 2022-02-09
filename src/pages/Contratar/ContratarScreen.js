@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderComponent from '../../components/HeaderComponent/index';
+import FormContratar from '../../components/FormContratar';
 
 import { Contratarview, ContadorContainer, ShowsContainer,
         TextContador, PedidosContainer
@@ -15,11 +16,9 @@ function ContratarScreen() {
             <ShowsContainer>
                 <TextContador>CONTRATAR</TextContador>
             </ShowsContainer>
-                
-            <PedidosContainer>
-             <TextContador>Músicas pedidas: 184</TextContador>
-            </PedidosContainer>
         </ContadorContainer>
+
+<FormContratar/>
         
 
    </Contratarview> 

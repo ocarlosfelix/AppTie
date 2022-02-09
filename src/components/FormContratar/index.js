@@ -1,10 +1,10 @@
 import React from "react"
-import { Formlogin, Emailinput, Passwordinput, BtnEntrar, BtnText } from "./styles"
+import { Formcontratar, FormTag, Emailinput, Passwordinput, BtnEntrar, BtnText } from "./styles"
 import { useNavigation } from '@react-navigation/native'
 
 
 
-export default function Form_login(){
+export default function FormContratar(){
 
     const navigation = useNavigation();
 
@@ -13,10 +13,28 @@ export default function Form_login(){
     }
     
     return(
-        <Formlogin>
+        <Formcontratar>
+
+            <FormTag>Nome Completo</FormTag>
 
             <Emailinput 
                 placeholder="seuemail@email.com"></Emailinput>
+
+<FormTag>Nome Completo</FormTag>
+
+<Emailinput 
+    placeholder="seuemail@email.com"></Emailinput>
+
+<FormTag>Nome Completo</FormTag>
+
+<Emailinput 
+    placeholder="seuemail@email.com"></Emailinput>
+
+<FormTag>Nome Completo</FormTag>
+
+<Emailinput 
+    placeholder="seuemail@email.com"></Emailinput>
+
 
             <Passwordinput
                 placeholder="******"></Passwordinput>
@@ -27,7 +45,7 @@ export default function Form_login(){
                 </BtnEntrar>
 
 
-        </Formlogin>
+        </Formcontratar>
         
     )
 }
