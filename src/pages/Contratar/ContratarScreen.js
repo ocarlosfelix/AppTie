@@ -2,26 +2,18 @@ import React from 'react';
 import HeaderComponent from '../../components/HeaderComponent/index';
 import FormContratar from '../../components/FormContratar';
 
-import { Contratarview, ContadorContainer, ShowsContainer,
-        TextContador, PedidosContainer
+import { Contratarview, BannerContratar, BannerText
 } from "./styles"
 
 function ContratarScreen() {
     return (
         <Contratarview>
-
-        <HeaderComponent/>
-
-        <ContadorContainer>
-            <ShowsContainer>
-                <TextContador>CONTRATAR</TextContador>
-            </ShowsContainer>
-        </ContadorContainer>
-
-<FormContratar/>
-        
-
-   </Contratarview> 
+            <HeaderComponent/>
+            <BannerContratar>
+                <BannerText>Peça já seu orçamento!</BannerText>
+            </BannerContratar>
+            <FormContratar/>
+        </Contratarview> 
     )
 };
 

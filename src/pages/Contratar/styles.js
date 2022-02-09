@@ -4,15 +4,21 @@ export const Contratarview = styled.View`
 flex:1;
 padding-top:30px;
 alignItems:center;
-background-color:#fff;
-`
-
-export const Header = styled.View`
-flex-direction:row;
-justify-content: space-around;
-align-items:center;
-width:100%;
 background-color:#154a02;
+
+`
+export const BannerContratar = styled.View`
+width:100%;
+height:50px;
+background-color:#9dbb39;
+justify-content:center;
+align-items:center;
+`;
+
+export const BannerText = styled.Text`
+    fontSize:20px;
+    font-weight:bold;
+    color:#FFF;
 `;
 
 export const ProfileBox = styled.View`
