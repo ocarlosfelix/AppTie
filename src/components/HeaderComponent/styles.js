@@ -8,13 +8,14 @@ width:100%;
 background-color:#154a02;
 `;
 
-export const ProfileBox = styled.View`
+export const ProfileBox = styled.TouchableOpacity`
 flex:1;
 flexDirection:row;
 flexWrap:wrap;
 flex-direction:row;
 align-items:center;
 `;
+
 
 export const ProfilePic = styled.Image`
 borderWidth: 2px;
