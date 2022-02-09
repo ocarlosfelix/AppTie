@@ -13,7 +13,7 @@ export default function Home_view() {
     const navigation = useNavigation();
 
     const handleSobreClick = () => {
-        navigation.navigate('MusicList');
+        navigation.navigate('PedirMusica');
     }
 
     return (       

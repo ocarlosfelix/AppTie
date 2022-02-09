@@ -5,13 +5,12 @@ import SearchIcon from "../../images/searchicon.png"
 import FloatingButton from "./floatingbutton"
 
 import { MusicList, Header, ProfileBox, ProfilePic, Username, ContadorBox, PedidosText, PedidosNum,
-    SearchContainer, SearchBar, SearchBoxIcon, SearchBoxText, Scroll, MusicRow, Item, 
-    ItemText, MusicIdContainer, MusicName, MusicArtist, TagContainer, PrimeiraTag, SegundaTag, 
-    BtnPedirMusica, TextPedirMusica , SugerirMusica, BtnSugerirMusica, 
-    SugerirMusicaText, FooterMenu } from '../MusicList_view/styles'
+    SearchContainer, SearchBar, SearchBoxIcon, Scroll, MusicRow, Item, 
+    MusicIdContainer, MusicName, MusicArtist, TagContainer, PrimeiraTag, SegundaTag, 
+    BtnPedirMusica, TextPedirMusica } from './styles'
 
 
-export default function MusicList_view() {
+export default function PedirMusica_view() {
     return (       
         <MusicList>
 

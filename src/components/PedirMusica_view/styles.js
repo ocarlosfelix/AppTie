@@ -55,7 +55,7 @@ export const PedidosNum = styled.Text`
 align-self:flex-end;
 margin-right:43px;
 fontSize:16px;
-color:#9dbb39;
+color:#0f0;
 `;
 
 export const SearchContainer = styled.View`
