@@ -1,6 +1,9 @@
 import React from "react"
-import { Formcontratar, FormTag, Emailinput, BannerContratar, BtnEntrar, BtnText, BannerText } from "./styles"
+import { Formcontratar, FormTag, Emailinput, BannerContratar, 
+    BtnEnviar, BtnText, BannerText, EnderecoContainer, BairroCidadeContainer, 
+    Telefoneinput, Bairroinput, Cidadeinput } from "./styles"
 import { useNavigation } from '@react-navigation/native'
+import DateTimePick from '../../components/DateTimePicker/index';
 
 
 
@@ -20,27 +23,27 @@ export default function FormContratar(){
             <Emailinput placeholder="Seu Nome Completo" ></Emailinput>
 
             <FormTag>Telefone para Contato</FormTag>
-            <Emailinput placeholder="(xx)xxxxx-xxxx" keyboardType="phone-pad"></Emailinput>
+            <Telefoneinput placeholder="(xx)xxxxx-xxxx" keyboardType="phone-pad" textContentType="telephoneNumber"></Telefoneinput>
 
-            <FormTag>Data do Evento</FormTag>
-            <Emailinput placeholder="31/02/1937"></Emailinput>
-
-            <FormTag>Endereço do Evento</FormTag>
-            <Emailinput placeholder="Rua"></Emailinput>
-            <Emailinput 
-            placeholder="Bairro"></Emailinput>
-            <Emailinput 
-            placeholder="Cidade"></Emailinput>
-
-            <FormTag>Hora de Início do Show</FormTag>
-            <Emailinput placeholder="16:57"></Emailinput>
+            <DateTimePick/>
 
             <FormTag>Duração do Show</FormTag>
-            <Emailinput placeholder="2 horas"></Emailinput>
+            <Emailinput placeholder="2 horas"></Emailinput>           
 
-            <BtnEntrar onPress={ handleSobreClick }>
-            <BtnText>Entrar</BtnText>
-            </BtnEntrar>
+            <FormTag>Endereço do Evento</FormTag>
+            <EnderecoContainer>
+                
+                <Emailinput placeholder="Rua"></Emailinput>
+            
+                <BairroCidadeContainer>
+                    <Bairroinput placeholder="Bairro"></Bairroinput>
+                    <Cidadeinput placeholder="Cidade"></Cidadeinput>
+                </BairroCidadeContainer>
+            </EnderecoContainer>
+
+            <BtnEnviar onPress={ handleSobreClick }>
+            <BtnText>Enviar</BtnText>
+            </BtnEnviar>
 
 
         </Formcontratar>

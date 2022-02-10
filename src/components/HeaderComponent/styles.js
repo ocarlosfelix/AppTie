@@ -47,7 +47,7 @@ color:#FFF;
 
 export const PedidosNum = styled.Text`
 align-self:flex-end;
-margin-right:43px;
+margin-right:33px;
 fontSize:16px;
 color:#0f0;
 `;

@@ -22,7 +22,7 @@ export default function HeaderComponent() {
                 </ProfileBox>
 
                 <ContadorBox>
-                    <PedidosText>Você já pediu:</PedidosText>
+                    <PedidosText>Você pediu:</PedidosText>
                     <PedidosNum> 100 músicas</PedidosNum>
                 </ContadorBox>
             </Header>

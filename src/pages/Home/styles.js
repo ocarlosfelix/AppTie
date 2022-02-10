@@ -1,10 +1,12 @@
 import styled from 'styled-components/native'
 
-export const Homeview = styled.View`
+export const Homeview = styled.ImageBackground`
 flex:1;
-padding-top:30px;
-alignItems:center;
-background-color:#fff;
+justify-content:flex-start
+align-items:center;
+paddingTop:30px;
+resize-mode:cover;
+width:100%;
 `
 
 export const Header = styled.View`
@@ -60,6 +62,12 @@ export const ShowsContainer = styled.View`
     justifyContent:center;
 `;
 
+export const MenuContainer = styled.View`
+margin-top:150px;
+width:100%;
+align-items:center;
+`;
+
 export const PedidosContainer = styled.View`
     borderRadius:10px;        
     width:90%;
@@ -80,7 +88,7 @@ export const BtnVerdeClaro = styled.TouchableOpacity`
     borderRadius:10px;        
     width:90%;
     height:80px;
-    backgroundColor:#9dbb39;
+    backgroundColor:#4b3621;
     marginLeft:12px;
     margin:10px;    
     alignItems:center;

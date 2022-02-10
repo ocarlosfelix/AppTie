@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderComponent from '../../components/HeaderComponent/index';
+import DateTimePick from '../../components/DateTimePicker/index';
 
 import { Redesview, ContadorContainer, ShowsContainer,
     TextContador, PedidosContainer
@@ -10,18 +11,7 @@ function RedesScreen() {
         <Redesview>
 
         <HeaderComponent/>
-
-        <ContadorContainer>
-            <ShowsContainer>
-                <TextContador>Redes</TextContador>
-            </ShowsContainer>
-                
-            <PedidosContainer>
-             <TextContador>Músicas pedidas: 184</TextContador>
-            </PedidosContainer>
-        </ContadorContainer>
-        
-
+        <DateTimePick/>
    </Redesview> 
     )
 };

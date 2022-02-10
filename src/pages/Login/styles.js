@@ -1,11 +1,12 @@
 import styled from 'styled-components/native'
 
-export const Login = styled.View`
+export const Login = styled.ImageBackground`
 flex:1;
 justify-content:flex-start
 align-items:center;
 paddingTop:40px;
-background-color:#154a02;
+resize-mode:cover;
+width:100%;
 `
 
 export const Aptlogo = styled.Image`
@@ -39,4 +40,10 @@ margin:10px;
 fontWeight:bold;
 fontSize:16px;
 color:#FFF;
+`;
+
+export const Background = styled.ImageBackground`
+    flex: 1;
+    resize-mode:cover;
+    width:100%;
 `;

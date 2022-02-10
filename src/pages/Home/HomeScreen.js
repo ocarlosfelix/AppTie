@@ -2,10 +2,12 @@ import React from "react"
 import HeaderComponent from '../../components/HeaderComponent/index'
 import FloatingButton from "../../components/FloatingButton/floatingbutton"
 import { useNavigation } from '@react-navigation/native'
+import AppTieBG from '../../images/apptiebackground2.jpg'
+import { StatusBar } from 'expo-status-bar';
 
 import { Homeview, BtnVerdeClaro, BtnVerdeEscuro, 
     BtnText, ContadorContainer, ShowsContainer,
-    TextContador, PedidosContainer
+    TextContador, PedidosContainer, MenuContainer
 } from "../../pages/Home/styles"
 
 export default function HomeScreen() {
@@ -32,12 +34,14 @@ export default function HomeScreen() {
         navigation.navigate('AreaBanda');
     }
 
+    const imgbg = AppTieBG
+
     return (       
-        <Homeview>
+        <Homeview source={imgbg}>
 
             <HeaderComponent/>
 
-            <ContadorContainer>
+{/*            <ContadorContainer>
                 <ShowsContainer>
                     <TextContador>Shows assistidos: 47</TextContador>
                 </ShowsContainer>
@@ -46,7 +50,10 @@ export default function HomeScreen() {
                  <TextContador>Músicas pedidas: 184</TextContador>
                 </PedidosContainer>
             </ContadorContainer>
-            
+*/}         
+
+<MenuContainer>
+
             <BtnVerdeClaro onPress={ SobreClickPedirMusica }>
                     <BtnText>Pedir Musica</BtnText>
             </BtnVerdeClaro>
@@ -67,10 +74,10 @@ export default function HomeScreen() {
                     <BtnText>Área da Banda</BtnText>
             </BtnVerdeEscuro>
 
-        
+</MenuContainer>
 
             <FloatingButton style={{ bottom:100 }}/>
-
+            <StatusBar style="auto" />
        </Homeview> 
 
     )

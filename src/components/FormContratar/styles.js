@@ -27,6 +27,20 @@ export const FormTag = styled.Text`
     color:#FFF;
     padding-left:20px;
 `;
+
+export const EnderecoContainer = styled.View`
+    justifyContent:center;
+    align-content:space-around;
+    flex:1;
+
+`;
+
+export const BairroCidadeContainer = styled.View`
+flex:1;
+flex-direction:row;
+align-self:center;
+`;
+
 export const Emailinput = styled.TextInput`
     borderRadius:10px;
     backgroundColor:#fff;
@@ -37,15 +51,35 @@ export const Emailinput = styled.TextInput`
     align-self:center;
 `;
 
-export const Passwordinput = styled.TextInput`
+export const Telefoneinput = styled.TextInput`
     borderRadius:10px;
     backgroundColor:#fff;
     height:40px;
     margin:10px;
-    width:300px;
+    width:90%;
+    paddingLeft:10px;
+    align-self:center;
+`;
+
+export const Bairroinput = styled.TextInput`
+    borderRadius:10px;
+    backgroundColor:#fff;
+    height:40px;
+    margin:10px;
+    width:43%;
     paddingLeft:10px;
 `;
-export const BtnEntrar = styled.TouchableOpacity`
+
+export const Cidadeinput = styled.TextInput`
+    borderRadius:10px;
+    backgroundColor:#fff;
+    height:40px;
+    margin:10px;
+    width:43%;
+    paddingLeft:10px;
+`;
+
+export const BtnEnviar = styled.TouchableOpacity`
     borderRadius:10px;        
     width:90%;
     height:40px;
