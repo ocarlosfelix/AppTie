@@ -3,7 +3,8 @@ import { Formcontratar, FormTag, Emailinput, BannerContratar,
     BtnEnviar, BtnText, BannerText, EnderecoContainer, BairroCidadeContainer, 
     Telefoneinput, Bairroinput, Cidadeinput } from "./styles"
 import { useNavigation } from '@react-navigation/native'
-import DateTimePick from '../../components/DateTimePicker/index';
+import DateTimePick from '../../components/DateTimePicker/index'
+
 
 
 

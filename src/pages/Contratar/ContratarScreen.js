@@ -2,7 +2,7 @@ import React from 'react';
 import HeaderComponent from '../../components/HeaderComponent/index';
 import FormContratar from '../../components/FormContratar';
 import { StatusBar } from 'expo-status-bar';
-import AppTieBG from '../../images/apptiebackground2.jpg'
+import AppTieBG from '../../images/apptiebackground2.jpg';
 
 import { Contratarview, BannerContratar, BannerText
 } from "./styles"

@@ -21,11 +21,21 @@ fontSize:16px;
 color:#FFF;
 `;
 
+export const BtnLogingoogle = styled.TouchableOpacity`
+align-items:center;
+width:300px;
+`;
+
 export const Logingoogle = styled.Image`
 resizeMode:contain;   
 height:40px;    
 width:300px;
 margin:10px;
+`;
+
+export const BtnLoginfacebook = styled.TouchableOpacity`
+align-items:center;
+width:300px;
 `;
 
 export const Loginfacebook = styled.Image`
@@ -35,6 +45,12 @@ width:300px;
 margin:10px;
 
 `;
+
+export const BtnCadastro = styled.TouchableOpacity`
+align-items:center;
+width:300px;
+`;
+
 export const Textocadastrar = styled.Text`
 margin:10px;
 fontWeight:bold;

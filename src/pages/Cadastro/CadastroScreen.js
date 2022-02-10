@@ -1,29 +1,30 @@
-import React from 'react';
-import HeaderComponent from '../../components/HeaderComponent/index';
+import { React, ImageBackground } from "react"
+import FormCadastro from "../../components/FormCadastro/index"
+import Logo from '../../images/logobca.png'
+import Logogoogle from '../../images/googlelogin.png'
+import Logofb from '../../images/fblogin.png'
+import AppTieBG from '../../images/apptiebackground.jpg'
+import {Login, Aptlogo, BtnCadastro, Textologin, Logingoogle, Loginfacebook, Textocadastrar} from '../Login/styles'
+import { StatusBar } from 'expo-status-bar';
+import { useNavigation } from '@react-navigation/native'
 
-import { Cadastroview, ContadorContainer, ShowsContainer,
-    TextContador, PedidosContainer
-} from "./styles"
+const imgbg = AppTieBG
 
-function CadastroScreen() {
+export default function CadastroScreen() {
+
+    const navigation = useNavigation();
+
+    const handleSobreClick = () => {
+        navigation.navigate('Cadastro');
+    }
+
     return (
-        <Cadastroview>
+        <Login source={imgbg}>
+ 
+            <Aptlogo source={Logo} />
+            <FormCadastro />
+            <StatusBar style="auto" />
+        </Login>
 
-        <HeaderComponent/>
-
-        <ContadorContainer>
-            <ShowsContainer>
-                <TextContador>AREA DE CADASTRO</TextContador>
-            </ShowsContainer>
-                
-            <PedidosContainer>
-             <TextContador>Músicas pedidas: 184</TextContador>
-            </PedidosContainer>
-        </ContadorContainer>
-        
-
-   </Cadastroview> 
     )
-};
-
-export default CadastroScreen;
+}

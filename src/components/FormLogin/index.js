@@ -19,7 +19,7 @@ export default function FormLogin(){
                 placeholder="seuemail@email.com"></Emailinput>
 
             <Passwordinput
-                placeholder="******"></Passwordinput>
+                placeholder="******" secureTextEntry={true}></Passwordinput>
 
                 <BtnEntrar 
                     onPress={ handleSobreClick }>

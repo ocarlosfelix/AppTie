@@ -4,22 +4,42 @@ import Logo from '../../images/logobca.png'
 import Logogoogle from '../../images/googlelogin.png'
 import Logofb from '../../images/fblogin.png'
 import AppTieBG from '../../images/apptiebackground.jpg'
-import {Login, Aptlogo, Background, Textologin, Logingoogle, Loginfacebook, Textocadastrar} from '../Login/styles'
+import {Login, Aptlogo, BtnCadastro, BtnLogingoogle, BtnLoginfacebook, Textologin, Logingoogle, Loginfacebook, Textocadastrar} from '../Login/styles'
 import { StatusBar } from 'expo-status-bar';
-
+import { useNavigation } from '@react-navigation/native'
 
 const imgbg = AppTieBG
 
 export default function LoginScreen() {
+
+    const navigation = useNavigation();
+
+    const handleSobreClick = () => {
+        navigation.navigate('Cadastro');
+    }
+
     return (
         <Login source={imgbg}>
  
             <Aptlogo source={Logo} />
+            
+            
             <Textologin>Faça o login para pedir suas músicas</Textologin>
+            
+            
             <FormLogin />
-            <Logingoogle source={Logogoogle} />
-            <Loginfacebook source={Logofb} />
-            <Textocadastrar>Clique aqui para fazer o seu cadastro</Textocadastrar>
+            
+            <BtnLogingoogle>
+                <Logingoogle source={Logogoogle} />
+            </BtnLogingoogle>
+            
+            <BtnLoginfacebook>
+                <Loginfacebook source={Logofb} />
+            </BtnLoginfacebook>
+            
+            <BtnCadastro onPress={ handleSobreClick }>
+                <Textocadastrar>Clique aqui para fazer o seu cadastro</Textocadastrar>
+            </BtnCadastro>
             <StatusBar style="auto" />
         </Login>
 

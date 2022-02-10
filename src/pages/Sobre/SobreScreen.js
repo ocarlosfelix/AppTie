@@ -1,29 +1,27 @@
-import React from 'react';
-import HeaderComponent from '../../components/HeaderComponent/index';
+import { React, useState, useEffect } from 'react';
+import { View } from 'react-native';
+import HeaderComponent from '../../components/HeaderComponent/index'
+import styled from "../../pages/Sobre/styles"
+import AppTieBG from '../../images/apptiebackground2.jpg'
+
 
 import { Sobreview, ContadorContainer, ShowsContainer,
     TextContador, PedidosContainer
 } from "./styles"
 
-function SobreScreen() {
+export default function SobreScreen() {
+
+    const imgbg = AppTieBG
+   
     return (
-        <Sobreview>
+        <Sobreview source={imgbg}>
 
         <HeaderComponent/>
-
-        <ContadorContainer>
-            <ShowsContainer>
-                <TextContador>Sobre</TextContador>
-            </ShowsContainer>
-                
-            <PedidosContainer>
-             <TextContador>Músicas pedidas: 184</TextContador>
-            </PedidosContainer>
-        </ContadorContainer>
         
+        <View>
 
-   </Sobreview> 
+        </View>
+
+        </Sobreview> 
     )
 };
-
-export default SobreScreen;
