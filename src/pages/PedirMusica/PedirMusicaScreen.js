@@ -3,15 +3,21 @@ import lista from "../../components/ListaMus/lista"
 import SearchIcon from "../../images/searchicon.png"
 import FloatingButton from "../../components/FloatingButton/floatingbutton"
 import HeaderComponent from "../../components/HeaderComponent/index"
+import AppTieBG from '../../images/apptiebackground2.jpg'
+import { StatusBar } from 'expo-status-bar';
+
 
 import { MusicList, SearchContainer, SearchBar, SearchBoxIcon, Scroll, MusicRow, Item, 
     MusicIdContainer, MusicName, MusicArtist, TagContainer, PrimeiraTag, SegundaTag, 
-    BtnPedirMusica, TextPedirMusica } from './styles'
+    BtnPedirMusica, TextPedirMusica, SelectContainer } from './styles'
 
 
 export default function PedirMusicaScreen() {
+
+    const imgbg = AppTieBG
+
     return (       
-        <MusicList>
+        <MusicList source={imgbg}>
 
             <HeaderComponent/>
 
@@ -30,15 +36,17 @@ export default function PedirMusicaScreen() {
                             <MusicName>{item.musica}</MusicName>
                             <MusicArtist>{item.artista}</MusicArtist>
                         </MusicIdContainer>
+                        <SelectContainer>
                         <TagContainer>
                             <PrimeiraTag>{item.tag1}</PrimeiraTag>
                             <SegundaTag>{item.tag2}</SegundaTag>
                         </TagContainer>
-                        
+                        </SelectContainer>
                         <BtnPedirMusica>
                             <TextPedirMusica>
                                 Toca Essa!
                             </TextPedirMusica>
+                        
                         </BtnPedirMusica>
                     </Item>
                 )

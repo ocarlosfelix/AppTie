@@ -1,47 +1,29 @@
 import styled from 'styled-components/native'
 
-export const Contratarview = styled.View`
+export const Contratarview = styled.ImageBackground`
 flex:1;
-padding-top:30px;
-alignItems:center;
-background-color:#154a02;
-
+justify-content:flex-start
+align-items:center;
+paddingTop:30px;
+resize-mode:cover;
+width:100%;
 `
 export const BannerContratar = styled.View`
 width:100%;
 height:50px;
-background-color:#9dbb39;
+background-color:#154a02;
 justify-content:center;
 align-items:center;
+margin-top:10px;
 `;
 
 export const BannerText = styled.Text`
-    fontSize:20px;
+    fontSize:16px;
     font-weight:bold;
     color:#FFF;
 `;
 
-export const ProfileBox = styled.View`
-flex:1;
-flexDirection:row;
-flexWrap:wrap;
-flex-direction:row;
-align-items:center;
-`;
 
-export const ProfilePic = styled.Image`
-borderWidth: 2px;
-borderColor: #9dbb39;
-borderRadius:60px;
-max-height:50px;
-max-width:50px;
-margin:15px;
-`;
-
-export const Username = styled.Text`
-fontSize:16px;
-color:#FFF;
-`;
 
 export const ContadorContainer = styled.View`
 

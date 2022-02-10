@@ -1,13 +1,14 @@
-import React from "react"
+import { React, View, Animated } from "react"
 import HeaderComponent from '../../components/HeaderComponent/index'
 import FloatingButton from "../../components/FloatingButton/floatingbutton"
 import { useNavigation } from '@react-navigation/native'
 import AppTieBG from '../../images/apptiebackground2.jpg'
 import { StatusBar } from 'expo-status-bar';
+import {AntDesign, Entypo } from '@expo/vector-icons'
 
 import { Homeview, BtnVerdeClaro, BtnVerdeEscuro, 
     BtnText, ContadorContainer, ShowsContainer,
-    TextContador, PedidosContainer, MenuContainer
+    TextContador, PedidosContainer, MenuContainer, BtnRedesSociais, PainelRedesSociais
 } from "../../pages/Home/styles"
 
 export default function HomeScreen() {
@@ -62,13 +63,28 @@ export default function HomeScreen() {
                     <BtnText>Sobre a Banda</BtnText>
             </BtnVerdeClaro>
             
-            <BtnVerdeClaro onPress={ SobreClickRedes }>
+{/*            <BtnVerdeClaro onPress={ SobreClickRedes }>
                     <BtnText>Redes Sociais</BtnText>
-            </BtnVerdeClaro>
+</BtnVerdeClaro> */}
+
 
             <BtnVerdeClaro onPress={ SobreClickContratar }>
                     <BtnText>Contratar</BtnText>
             </BtnVerdeClaro>
+
+<PainelRedesSociais>
+    <BtnRedesSociais>
+                    <AntDesign name="instagram" size={30} color="#fff" />
+    </BtnRedesSociais>
+
+    <BtnRedesSociais>
+                    <Entypo name="facebook" size={30} color="#fff" />
+    </BtnRedesSociais>
+
+    <BtnRedesSociais>
+                    <AntDesign name="youtube" size={30} color="#fff" />
+    </BtnRedesSociais>
+</PainelRedesSociais>
 
             <BtnVerdeEscuro onPress={ SobreClickAreaBanda }>
                     <BtnText>Área da Banda</BtnText>

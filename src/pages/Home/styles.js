@@ -88,7 +88,7 @@ export const BtnVerdeClaro = styled.TouchableOpacity`
     borderRadius:10px;        
     width:90%;
     height:80px;
-    backgroundColor:#4b3621;
+    backgroundColor:#154a02;
     marginLeft:12px;
     margin:10px;    
     alignItems:center;
@@ -109,4 +109,19 @@ export const BtnVerdeEscuro = styled.TouchableOpacity`
 export const BtnText = styled.Text`
     fontSize:20px;
     color:#FFF;
+`;
+
+export const BtnRedesSociais = styled.TouchableOpacity`
+    width:60px;
+    height:60px;
+    borderRadius: 30px;
+    margin:20px;
+    alignItems:center;
+    justifyContent:center;
+    background-color:#154a02;
+`;
+
+export const PainelRedesSociais = styled.View`
+    flex-direction:row;
+
 `;

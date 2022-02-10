@@ -39,21 +39,17 @@ return(
         <DatePickerContainer>
 
         <PainelDateTime>
+        <TextDateTime>{textdate}</TextDateTime>
             <BtnPicker onPress={() => showMode('date')}>
                 <BtnText>Dia do Show</BtnText>
-            </BtnPicker>
-        
-            <TextDateTime>{textdate}</TextDateTime>
-        
+            </BtnPicker>      
         </PainelDateTime>
         
         <PainelDateTime>
+        <TextDateTime>{texttime}</TextDateTime>
             <BtnPicker onPress={() => showMode('time')}>
                 <BtnText>Hora de início</BtnText>
             </BtnPicker>
-
-            <TextDateTime>{texttime}</TextDateTime>
-
         </PainelDateTime>
 
         </DatePickerContainer>

@@ -1,12 +1,13 @@
 import styled from 'styled-components/native'
 
-export const MusicList = styled.View`
+export const MusicList = styled.ImageBackground`
 flex:1;
-padding-top:30px;
-alignItems:center;
-background-color:#fff;
+justify-content:flex-start
+align-items:center;
+paddingTop:30px;
+resize-mode:cover;
+width:100%;
 `
-
 export const Header = styled.View`
 flex-direction:row;
 justify-content: space-around;
@@ -62,7 +63,6 @@ export const SearchContainer = styled.View`
 flexDirection:row;
 justifyContent:center;
 alignItems: center;
-backgroundColor: #fff;
 
 
 `;
@@ -99,9 +99,9 @@ export const Scroll = styled.ScrollView`
 export const Item = styled.View`
 padding:10px;
 flex-direction:row;
-borderBottomColor:#666;
-borderBottomWidth:1px;
-marginBottom:10px;
+marginBottom:5px;
+marginTop:5px;
+backgroundColor: rgba(255, 255, 255, 0.7);
 `;
 
 export const ItemText = styled.Text`
@@ -110,23 +110,28 @@ font-size:16px;
 color:#000;
 `;
 export const MusicIdContainer = styled.View`
-flex:1;
+flex:3;
 flex-direction:column;
 `;
 
 
 export const MusicName = styled.Text`
 font-weight:bold;
-font-size:16px;
-color:#000;
+font-size:20px;
+color:#222;
 `;
 
 export const MusicArtist = styled.Text`
 font-style:italic;
 font-size:16px;
-color:#888;
+color:#222;
 
 `;
+
+export const SelectContainer= styled.View`
+
+`;
+
 TagContainer
 export const TagContainer = styled.View`
 flex:1;
@@ -165,8 +170,8 @@ export const BtnPedirMusica = styled.TouchableOpacity`
 flex:1;
 borderRadius:10px;        
 width:100px;
-height:40px;
-backgroundColor:#9dbb39;
+height:50px;
+backgroundColor:#154a02;
 marginLeft:12px;
 alignItems:center;
 justifyContent:center;

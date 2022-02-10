@@ -1,7 +1,6 @@
 import styled from 'styled-components/native'
 
 export const Formcontratar = styled.ScrollView`
-background-color:#154a02;
 width:100%;
 height:100%;
 padding-top:20px;
@@ -24,7 +23,8 @@ export const BannerText = styled.Text`
 
 export const FormTag = styled.Text`
     fontSize:20px;
-    color:#FFF;
+    font-weight:bold;
+    color:#154a02;
     padding-left:20px;
 `;
 
@@ -83,7 +83,7 @@ export const BtnEnviar = styled.TouchableOpacity`
     borderRadius:10px;        
     width:90%;
     height:40px;
-    backgroundColor:#9dbb39;
+    backgroundColor:#154a02;
     marginLeft:12px;
     margin:10px;    
     alignItems:center;
