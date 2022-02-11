@@ -1,4 +1,9 @@
-import React from "react"
+import { React, useState } from "react"
+import { authentication } from '../../config/firebase';
+import { createUserWithEmailAndPassword, getIdToken } from "firebase/auth";
+import { useNavigation } from '@react-navigation/native'
+import { doc, setDoc } from "firebase/firestore";
+
 import { Formcadastro, 
          Emailinput, 
          Passwordinput, 
@@ -7,41 +12,80 @@ import { Formcadastro,
          FormTag,
          Telefoneinput,  
          InputText} from "./styles"
-import { useNavigation } from '@react-navigation/native'
-
+import { collection, Firestore } from "firebase/firestore/lite";
+import { FirebaseError } from "firebase/app";
 
 
 export default function FormCadastro(){
 
+// componente de navegação entre telas
     const navigation = useNavigation();
 
     const handleSobreClick = () => {
         navigation.navigate('Home');
     }
     
+//componente de registro de usuário
+    const [isSignedin, setIsSinedin] = useState(false);
+    const [name,setName] = useState('');
+    const [nick,setNick] = useState('');
+    const [phone,setPhone] = useState('');
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
+    const [userUid,setUserUid] = useState();
+
+const registerUser = ()=>{
+    createUserWithEmailAndPassword(authentication, email, password)
+    .then((re)=>{
+        console.log(re);
+        setIsSinedin=(true);
+    })
+    .catch((re)=>{
+        console.log(re);
+    })
+};
+
+
+
     return(
         <Formcadastro>
 
             <FormTag>Nome Completo</FormTag>
-            <InputText placeholder="Seu Nome Completo" ></InputText>
+            <InputText 
+                placeholder="Seu Nome Completo"
+                onChangeText={text=>setName(text)}/>
 
             <FormTag>Apelido</FormTag>
-            <InputText placeholder="Como podemos te chamar?" ></InputText>
+            <InputText 
+                placeholder="Como podemos te chamar?"
+                onChangeText={text=>setNick(text)}/>
 
             <FormTag>Telefone para Contato</FormTag>
-            <Telefoneinput placeholder="(xx)xxxxx-xxxx" keyboardType="phone-pad" textContentType="telephoneNumber"></Telefoneinput>
+            <Telefoneinput 
+                placeholder="(xx)xxxxx-xxxx" 
+                keyboardType="phone-pad" 
+                onChangeText={text=>setPhone(text)}
+                textContentType="telephoneNumber"/>
 
             <FormTag>Email</FormTag>
-            <Emailinput placeholder="seuemail@digiteaqui.com.br" ></Emailinput>
-            <FormTag>Senha</FormTag>
-            <Passwordinput placeholder="******">Senha</Passwordinput>
-            <FormTag>Confirme a sua senha</FormTag>
-            <Passwordinput placeholder="******">Confirme sua senha</Passwordinput>
+            <Emailinput 
+                placeholder="Email" 
+                keyboardType="email-address" 
+                onChangeText={text=>setEmail(text)}
+                value={email}/>
 
-                <BtnEntrar 
-                    onPress={ handleSobreClick }>
+            <FormTag>Senha</FormTag>
+            <Passwordinput 
+                placeholder="Senha" 
+                value={password} 
+                onChangeText={text=>setPassword(text)}
+                secureTextEntry={true}/>
+
+            <BtnEntrar
+                onPress={registerUser}
+                >
                     <BtnText>Enviar</BtnText>
-                </BtnEntrar>
+            </BtnEntrar>
 
 
         </Formcadastro>

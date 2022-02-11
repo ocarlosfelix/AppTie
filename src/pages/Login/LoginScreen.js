@@ -1,4 +1,4 @@
-import { React, ImageBackground } from "react"
+import { React, ImageBackground, useState, useEffect } from "react"
 import FormLogin from "../../components/FormLogin/index"
 import Logo from '../../images/logobca.png'
 import Logogoogle from '../../images/googlelogin.png'
@@ -7,6 +7,8 @@ import AppTieBG from '../../images/apptiebackground.jpg'
 import {Login, Aptlogo, BtnCadastro, BtnLogingoogle, BtnLoginfacebook, Textologin, Logingoogle, Loginfacebook, Textocadastrar} from '../Login/styles'
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native'
+
+
 
 const imgbg = AppTieBG
 
@@ -17,6 +19,8 @@ export default function LoginScreen() {
     const handleSobreClick = () => {
         navigation.navigate('Cadastro');
     }
+
+
 
     return (
         <Login source={imgbg}>

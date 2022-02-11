@@ -1,19 +1,30 @@
-import React from "react"
+import { React, useEffect, useState } from "react"
 import lista from "../../components/ListaMus/lista"
 import SearchIcon from "../../images/searchicon.png"
 import FloatingButton from "../../components/FloatingButton/floatingbutton"
 import HeaderComponent from "../../components/HeaderComponent/index"
 import AppTieBG from '../../images/apptiebackground2.jpg'
 import { StatusBar } from 'expo-status-bar';
+import ListaItem from "../../components/ListaItem/ListaItem.js"
 
+import { 
+    MusicList, 
+    SearchContainer, 
+    SearchBar, 
+    SearchBoxIcon, 
+    FlatContainer, 
+    Listagem, 
+       } from './styles'
 
-import { MusicList, SearchContainer, SearchBar, SearchBoxIcon, Scroll, MusicRow, Item, 
-    MusicIdContainer, MusicName, MusicArtist, TagContainer, PrimeiraTag, SegundaTag, 
-    BtnPedirMusica, TextPedirMusica, SelectContainer } from './styles'
 
 
 export default function PedirMusicaScreen() {
 
+//Conexão com o banco de dados//    
+    const [data,setData] = useState([]);
+
+ 
+//---------------------------//
     const imgbg = AppTieBG
 
     return (       
@@ -27,33 +38,18 @@ export default function PedirMusicaScreen() {
         
         </SearchContainer>
 
-        <Scroll>
-        <MusicRow>
-            {lista.map((item, index)=>{
-                return(
-                    <Item key={index}>
-                        <MusicIdContainer>
-                            <MusicName>{item.musica}</MusicName>
-                            <MusicArtist>{item.artista}</MusicArtist>
-                        </MusicIdContainer>
-                        <SelectContainer>
-                        <TagContainer>
-                            <PrimeiraTag>{item.tag1}</PrimeiraTag>
-                            <SegundaTag>{item.tag2}</SegundaTag>
-                        </TagContainer>
-                        </SelectContainer>
-                        <BtnPedirMusica>
-                            <TextPedirMusica>
-                                Toca Essa!
-                            </TextPedirMusica>
-                        
-                        </BtnPedirMusica>
-                    </Item>
-                )
-            })}
-        </MusicRow>
-        </Scroll>
+        <FlatContainer>
+            <Listagem
+            data={lista}
+            renderItem={({item})=><ListaItem data={item}/>}
+            keyExtractor={(item)=>item.id}
+            />
+        </FlatContainer>
 
+
+
+
+        <StatusBar style="auto" />
             <FloatingButton style={{ bottom:100 }}/>
 
        </MusicList> 

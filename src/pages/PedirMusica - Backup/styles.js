@@ -88,12 +88,12 @@ export const SearchBoxText = styled.Text`
 
 `;
 
-export const Listagem = styled.FlatList`
+export const MusicRow = styled.View`
 
 `;
 
-export const FlatContainer = styled.View`
-    flex:1;
+export const Scroll = styled.ScrollView`
+    width:100%;
 `;
 
 export const Item = styled.View`
@@ -143,7 +143,7 @@ font-size:16px;
 color:#888;
 `;
 
-export const tagPrimaria = styled.Text`
+export const PrimeiraTag = styled.Text`
 background-color:#AA9052;
 border-radius:5px;
 justify-content:center;
@@ -155,7 +155,7 @@ font-size:10px;
 color:#CCC;
 `;
 
-export const tagSecundaria = styled.Text`
+export const SegundaTag = styled.Text`
 background-color:#AA8688;
 border-radius:5px;
 justify-content:center;
