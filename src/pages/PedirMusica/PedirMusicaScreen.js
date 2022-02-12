@@ -1,9 +1,22 @@
 import React from 'react';
 import AppTieBG from '../../images/apptiebackground2.jpg'
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar } from 'react-native';
+import HeaderComponent from '../../components/HeaderComponent';
+import FloatingButton from '../../components/FloatingButton/floatingbutton';
 import {
     MusicList,
     Container,
+    MusicFlatList,
+    ItemView,
+    ItemContainer,
+    MusicIdContainer,
+    MusicName,
+    MusicArtist,
+    TagPrimaria,
+    TagSecundaria,
+    BtnPedirMusica,
+    TextPedirMusica,
+    MusicTagContainer,
+    SelectContainer,
 
 } from '../PedirMusica/styles'
 const DATA = [
@@ -39,12 +52,24 @@ const DATA = [
 ];
 
 const Item = ({ musicanome, musicaartista, tagprimaria, tagsecundaria }) => (
-  <View style={styles.item}>
-    <Text style={styles.title}>{musicanome}</Text>
-    <Text style={styles.title}>{musicaartista}</Text>
-    <Text style={styles.title}>{tagprimaria}</Text>
-    <Text style={styles.title}>{tagsecundaria}</Text>
-  </View>
+    <ItemView>
+            <MusicIdContainer>
+                <MusicName>{musicanome}</MusicName>
+                <MusicArtist>{musicaartista}</MusicArtist>
+            </MusicIdContainer>
+
+            <SelectContainer>
+                <MusicTagContainer>
+                    <TagPrimaria>{tagprimaria}</TagPrimaria>
+                    <TagSecundaria>{tagsecundaria}</TagSecundaria>
+                </MusicTagContainer>
+            </SelectContainer>
+            <BtnPedirMusica>
+                <TextPedirMusica>Toca Essa!</TextPedirMusica>
+            </BtnPedirMusica>
+
+
+    </ItemView>
 );
 
 
@@ -55,51 +80,35 @@ export default function PedirMusicaScreen() {
 
 const imgbg = AppTieBG
 
-  const renderItem = ({item}, {itemTag}) => (
+  const renderItem = ({item}) => (
 
-    <View>
+    <ItemContainer>
         <Item 
         musicanome={item.musicanome} 
         musicaartista={item.musicaartista}
-        />
-        <Item 
         tagprimaria={item.tagprimaria}
         tagsecundaria={item.tagsecundaria}
-        />
-    </View>
+        />      
+    </ItemContainer>
   );
 
   return (
 
 <MusicList source={imgbg}>
+
+    <HeaderComponent/>
+
     <Container>
-      <FlatList
+      <MusicFlatList
         data={DATA}
         renderItem={renderItem}
         keyExtractor={item => item.id}
       />
     </Container>
+
+<FloatingButton style={{ bottom:100 }}/>
+
 </MusicList>
 
   );
 }
-
-const styles = StyleSheet.create({
-
-  item: {
-    backgroundColor: '#ff88ff',
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  itemTag: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    flexDirection:'row',
-  },
-  title: {
-    fontSize: 32,
-  },
-});
