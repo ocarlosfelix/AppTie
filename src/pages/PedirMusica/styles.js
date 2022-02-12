@@ -93,7 +93,6 @@ export const Listagem = styled.FlatList`
 `;
 
 export const FlatContainer = styled.View`
-    flex:1;
 `;
 
 export const Item = styled.View`
@@ -190,3 +189,23 @@ height:85px;
 background-color:#154a02;
 `;
 
+export const Container = styled.View`
+width:100%;
+    `
+export const ItemContainer = styled.View`
+    backgroundColor: #f9c2ff;
+    padding: 20px;
+    marginVertical: 8px;
+    marginHorizontal: 16px;
+`
+export const ItemTag = styled.View`
+    backgroundColor: #f9c2ff;
+    padding: 20px;
+    marginVertical: 8px;
+    marginHorizontal: 16px;
+    flexDirection:'row';
+`
+export const Title = styled.Text`
+  title: {
+    fontSize: 32px;
+ `
