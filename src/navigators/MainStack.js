@@ -10,6 +10,7 @@ import SobreScreen from '../pages/Sobre/SobreScreen';
 import RedesScreen from '../pages/Redes/RedesScreen';
 import ContratarScreen from '../pages/Contratar/ContratarScreen';
 import AreaBandaScreen from '../pages/AreaBanda/AreaBandaScreen';
+import AdicionarRepertorioScreen from '../pages/AdicionarRepertorio/AdicionarRepertorioScreen';
 
 
 
@@ -30,6 +31,7 @@ export default () => {
             <MainStack.Screen name="Redes" component={RedesScreen}/>
             <MainStack.Screen name="Contratar" component={ContratarScreen}/>
             <MainStack.Screen name="AreaBanda" component={AreaBandaScreen}/>
+            <MainStack.Screen name="AdicionarRepertorio" component={AdicionarRepertorioScreen}/>
             
 
         </MainStack.Navigator>

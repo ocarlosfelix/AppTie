@@ -1,10 +1,12 @@
 import styled from 'styled-components/native'
 
-export const AreaBandaview = styled.View`
+export const AreaBandaview = styled.ImageBackground`
 flex:1;
-padding-top:30px;
-alignItems:center;
-background-color:#fff;
+justify-content:flex-start
+align-items:center;
+paddingTop:40px;
+resize-mode:cover;
+width:100%;
 `
 
 export const Header = styled.View`
