@@ -2,7 +2,7 @@ import { React, ImageBackground, useState, useEffect } from "react"
 import AppTieBG from '../../images/apptiebackground2.jpg'
 import HeaderComponent from '../../components/HeaderComponent/index'
 import { db, database, appfirebase } from '../../config/firebase'
-import { setDoc, addDoc, doc, Firestore, collection, getFirestore } from "firebase/firestore"
+import { setDoc, addDoc, doc, Firestore, collection, getFirestore } from "firebase/firestore/lite"
 import { StatusBar } from 'expo-status-bar'
 import "firebase/firestore"
 
@@ -18,6 +18,8 @@ import {
     InputView, 
     PageTitle,
     TextoBtn} from "./styles";
+import { FirebaseError } from "firebase/app"
+
 
 
 const imgbg = AppTieBG
@@ -29,24 +31,17 @@ export default function AdicionarRepertorioScreen() {
     const [musicTagPrimaria, setMusicTagPrimaria] = useState ('');
     const [musicTagSecundaria, setMusicTagSecundaria] = useState ('');
 
-    const pushFirestore = async () => {
-        await 
-            appfirebase
-            .collection("repertorio")
-            .add({
-                musicanome:musicName,
-                musicaartista:musicArtist,
-                tagprimaria:musicTagPrimaria,
-                tagsecundaria:musicTagSecundaria,
-          }).then(()=>{
-            console.log("Document written with ID: ", docRef.id);
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
+    const PostData = async () => {
+        const docMusica = {
+                    musicanome: musicName,
+                    musicaartista: musicArtist,
+                    tagprimaria: musicTagPrimaria,
+                    tagsecundaria: musicTagSecundaria
+          };
+        const repReference = await addDoc(collection(db, "repertorio"), {docMusica});
 
-        
-
+        console.log(docMusica);
+        console.log("ID da Musica: ", repReference.id);
     };
 
     return (
@@ -95,7 +90,7 @@ export default function AdicionarRepertorioScreen() {
                 value={musicTagSecundaria}/>
 
 
-            <BtnIncluirMusica onPress={pushFirestore}>
+            <BtnIncluirMusica onPress={PostData}>
                 <TextoBtn>Adicionar</TextoBtn>
             </BtnIncluirMusica>
         </AreaAdicionarMusica>
