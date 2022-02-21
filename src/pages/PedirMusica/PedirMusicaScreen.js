@@ -1,7 +1,9 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import AppTieBG from '../../images/apptiebackground2.jpg'
 import HeaderComponent from '../../components/HeaderComponent';
 import FloatingButton from '../../components/FloatingButton/floatingbutton';
+import db from '../../config/firebase'
+import { collection, getDocs, doc, setDoc, get } from 'firebase/firestore/lite';
 import {
     MusicList,
     Container,
@@ -19,10 +21,6 @@ import {
     SelectContainer,
 
 } from '../PedirMusica/styles'
-
-const data = async () => {
-  
-};
 
 const DATA = [
   {
@@ -56,32 +54,48 @@ const DATA = [
   },
 ];
 
-const Item = ({ musicanome, musicaartista, tagprimaria, tagsecundaria }) => (
+export default function PedirMusicaScreen() {
+
+  const [musicName, setMusicName] = useState ('');
+  const [musicArtist, setMusicArtist] = useState ('');
+  const [musicTagPrimaria, setMusicTagPrimaria] = useState ('');
+  const [musicTagSecundaria, setMusicTagSecundaria] = useState ('');
+
+  const getMusicData = async () => {
+    const docMusica = {
+      musicanome: musicName,
+      musicaartista: musicArtist,
+      tagprimaria: musicTagPrimaria,
+      tagsecundaria: musicTagSecundaria
+};
+const repReference = await get(collection(db, "repertorio"), {docMusica});
+
+console.log(docMusica);
+console.log("ID da Musica: ", repReference.id);
+  };
+
+
+  const Item = ({ musicanome, musicaartista, tagprimaria, tagsecundaria }) => (
     <ItemView>
             <MusicIdContainer>
                 <MusicName>{musicanome}</MusicName>
                 <MusicArtist>{musicaartista}</MusicArtist>
             </MusicIdContainer>
-
+  
             <SelectContainer>
                 <MusicTagContainer>
                     <TagPrimaria>{tagprimaria}</TagPrimaria>
                     <TagSecundaria>{tagsecundaria}</TagSecundaria>
                 </MusicTagContainer>
             </SelectContainer>
-            <BtnPedirMusica>
+
+            <BtnPedirMusica onPress={getMusicData}>
                 <TextPedirMusica>Toca Essa!</TextPedirMusica>
             </BtnPedirMusica>
-
-
+  
+  
     </ItemView>
-);
-
-
-
-
-
-export default function PedirMusicaScreen() {
+  );
 
 const imgbg = AppTieBG
 

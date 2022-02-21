@@ -32,16 +32,18 @@ export default function AdicionarRepertorioScreen() {
     const [musicTagSecundaria, setMusicTagSecundaria] = useState ('');
 
     const PostData = async () => {
-        const docMusica = {
-                    musicanome: musicName,
-                    musicaartista: musicArtist,
-                    tagprimaria: musicTagPrimaria,
-                    tagsecundaria: musicTagSecundaria
-          };
-        const repReference = await addDoc(collection(db, "repertorio"), {docMusica});
 
-        console.log(docMusica);
+        const repReference = await addDoc(collection(db, "repertorio"), {
+            musicanome: musicName,
+            musicaartista: musicArtist,
+            tagprimaria: musicTagPrimaria,
+            tagsecundaria: musicTagSecundaria});
+
         console.log("ID da Musica: ", repReference.id);
+        console.log("musicanome: " + musicName);
+        console.log("musicaartista: " + musicArtist);
+        console.log("tagprimaria: " + musicTagPrimaria);
+        console.log("tagsecundaria: " + musicTagSecundaria);         
     };
 
     return (

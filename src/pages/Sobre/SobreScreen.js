@@ -5,8 +5,6 @@ import HeaderComponent from '../../components/HeaderComponent/index'
 import AppTieBG from '../../images/apptiebackground2.jpg'
 import { db } from '../../config/firebase';
 import { collection, getDocs, doc, setDoc } from 'firebase/firestore/lite';
-
-
 import { 
     Sobreview,
 } from "./styles"
@@ -21,6 +19,7 @@ export default function SobreScreen() {
         const musicList = musicSnapshot.docs.map(doc => doc.data());
 
         console.log(musicList);
+        console.log("ID da Musica: ", musicSnapshot.id);
     }
 
     return (
