@@ -7,6 +7,7 @@ import AppTieBG from '../../images/apptiebackground.jpg'
 import {Login, Aptlogo, BtnCadastro, BtnLogingoogle, BtnLoginfacebook, Textologin, Logingoogle, Loginfacebook, Textocadastrar} from '../Login/styles'
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native'
+import {AsyncStorage} from '@react-native-async-storage/async-storage';
 
 
 

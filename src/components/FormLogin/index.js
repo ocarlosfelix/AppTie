@@ -10,8 +10,12 @@ export default function FormLogin(){
 // componente de navegação entre telas
     const navigation = useNavigation();
 
-    const handleSobreClick = () => {
+    const homeLinkClick = () => {
         navigation.navigate('Home');
+    }
+
+    const testLinkClick = () => {
+        navigation.navigate('Testpage');
     }
 
 //componente de autenticação de usuário
@@ -49,8 +53,13 @@ export default function FormLogin(){
                 </BtnEntrar>
 
                 <BtnEntrar 
-                    onPress={ handleSobreClick }>
+                    onPress={ homeLinkClick }>
                     <BtnText>.noidlogin</BtnText>
+                </BtnEntrar>
+
+                <BtnEntrar 
+                    onPress={ testLinkClick }>
+                    <BtnText>.testpage</BtnText>
                 </BtnEntrar>
 
 
