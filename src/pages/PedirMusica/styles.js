@@ -1,5 +1,14 @@
 import styled from 'styled-components/native'
 
+export const Sobreview = styled.ImageBackground`
+flex:1;
+justify-content:flex-start
+align-items:center;
+paddingTop:30px;
+resize-mode:cover;
+width:100%;
+`
+
 export const MusicList = styled.ImageBackground`
 flex:1;
 align-items:center;
@@ -137,8 +146,3 @@ export const TextPedirMusica= styled.Text`
 fontSize:15px;
 color:#FFF;
 `;
-
-
-
-
-

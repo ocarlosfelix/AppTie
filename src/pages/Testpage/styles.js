@@ -8,63 +8,27 @@ paddingTop:30px;
 resize-mode:cover;
 width:100%;
 `
-export const Header = styled.View`
-flex-direction:row;
-justify-content: space-around;
+
+export const MusicList = styled.ImageBackground`
+flex:1;
 align-items:center;
+paddingTop:30px;
+resize-mode:cover;
 width:100%;
-background-color:#154a02;
 `;
 
-export const ProfileBox = styled.View`
-flex:1;
-flexDirection:row;
-flexWrap:wrap;
-flex-direction:row;
-align-items:center;
+export const Container = styled.View`
+width:100%;
 `;
 
-export const ProfilePic = styled.Image`
-borderWidth: 2px;
-borderColor: #9dbb39;
-borderRadius:60px;
-max-height:50px;
-max-width:50px;
-margin:15px;
-`;
+export const MusicFlatList = styled.FlatList`
 
-export const Username = styled.Text`
-fontSize:16px;
-color:#FFF;
-`;
-
-export const ContadorBox = styled.View`
-flex:1;
-flex-direction:column;
-fontSize:16px;
-color:#FFF;
-`;
-
-export const PedidosText = styled.Text`
-align-self:flex-end;
-margin-right:35px;
-fontSize:16px;
-color:#FFF;
-`;
-
-export const PedidosNum = styled.Text`
-align-self:flex-end;
-margin-right:43px;
-fontSize:16px;
-color:#0f0;
 `;
 
 export const SearchContainer = styled.View`
 flexDirection:row;
 justifyContent:center;
 alignItems: center;
-
-
 `;
 
 export const SearchBar = styled.TextInput`
@@ -75,7 +39,6 @@ height:40px;
 margin:10px;
 width:80%;
 paddingLeft:10px;
-
 
 `;
 export const SearchBoxIcon = styled.Image`
@@ -88,34 +51,44 @@ export const SearchBoxText = styled.Text`
 
 `;
 
-export const MusicRow = styled.View`
-
-`;
-
-export const Scroll = styled.ScrollView`
-    width:100%;
-`;
-
-export const Item = styled.View`
-padding:10px;
-flex-direction:row;
-marginBottom:5px;
-marginTop:5px;
-backgroundColor: rgba(255, 255, 255, 0.7);
-`;
-
 export const ItemText = styled.Text`
 font-weight:bold;
 font-size:16px;
 color:#000;
 `;
-export const MusicIdContainer = styled.View`
-flex:3;
-flex-direction:column;
+
+export const ItemView = styled.View`
+flex-direction:row;
+backgroundColor: rgba(255, 255, 255, 0.7);
+margin-top:5px;
+margin-bottom:5px;
+padding-top:5px;
+padding-bottom:5px;
 `;
 
+export const ItemContainer = styled.View`
+width:100%;
+`;
+
+export const MusicIdContainer = styled.View`
+padding-left:15px;
+`;
+
+export const MusicNameContainer = styled.View`
+`;
+
+export const MusicTagContainer = styled.View`
+flex:1;
+justify-content:flex-end;
+align-items:flex-end;
+flex-direction:row;
+font-style:italic;
+font-size:16px;
+color:#888;
+`;
 
 export const MusicName = styled.Text`
+flex:3;
 font-weight:bold;
 font-size:20px;
 color:#222;
@@ -129,21 +102,11 @@ color:#222;
 `;
 
 export const SelectContainer= styled.View`
-
-`;
-
-TagContainer
-export const TagContainer = styled.View`
 flex:1;
-justify-content:flex-end;
-align-items:flex-end;
-flex-direction:row;
-font-style:italic;
-font-size:16px;
-color:#888;
+padding-right:15px
 `;
 
-export const PrimeiraTag = styled.Text`
+export const TagPrimaria = styled.Text`
 background-color:#AA9052;
 border-radius:5px;
 justify-content:center;
@@ -155,7 +118,7 @@ font-size:10px;
 color:#CCC;
 `;
 
-export const SegundaTag = styled.Text`
+export const TagSecundaria = styled.Text`
 background-color:#AA8688;
 border-radius:5px;
 justify-content:center;
@@ -169,10 +132,11 @@ color:#CCC;
 export const BtnPedirMusica = styled.TouchableOpacity`
 flex:1;
 borderRadius:10px;        
-width:100px;
+max-width:85px;
 height:50px;
 backgroundColor:#154a02;
-marginLeft:12px;
+marginLeft:5px;
+margin-right:15px
 alignItems:center;
 justifyContent:center;
 `;
@@ -182,11 +146,3 @@ export const TextPedirMusica= styled.Text`
 fontSize:15px;
 color:#FFF;
 `;
-
-
-export const FooterMenu= styled.View`
-width:100%;
-height:85px;
-background-color:#154a02;
-`;
-

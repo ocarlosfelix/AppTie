@@ -25,37 +25,93 @@ import { View } from 'react-native';
 import { BtnEntrar } from '../../components/FormLogin/styles';
 import HeaderComponent from '../../components/HeaderComponent/index'
 import AppTieBG from '../../images/apptiebackground2.jpg'
+import FloatingButton from '../../components/FloatingButton/floatingbutton';
 import { db } from '../../config/firebase';
 import { collection, getDocs, doc, setDoc, documentId, QuerySnapshot } from 'firebase/firestore/lite';
 import { 
-    Sobreview,
+    MusicList,
+    Container,
+    MusicFlatList,
+    ItemView,
+    ItemContainer,
+    MusicIdContainer,
+    MusicName,
+    MusicArtist,
+    TagPrimaria,
+    TagSecundaria,
+    BtnPedirMusica,
+    TextPedirMusica,
+    MusicTagContainer,
+    SelectContainer,
 } from "./styles"
+
 
 export default function TestpageScreen() {
 
     const imgbg = AppTieBG
 
-    const GetData = async () =>{
-        const musicsCol = collection(db, 'repertorio');
-        const musicSnapshot = await getDocs(musicsCol);
-        const musicList = musicSnapshot.docs.map(doc => doc.data());
-        const musicIDList = musicSnapshot.docs.map(doc => doc.id);
-        const musicID = musicSnapshot.docs.map(doc => doc.id);
-        const music = musicList.map(
-        doc => musicID
-        + ' || ' + 
-        doc.musicaartista 
-        + ' - ' + 
-        doc.musicanome
-         + ' -> ' + 
-        doc.tagprimaria 
-        + ' | ' + 
-        doc.tagsecundaria);
+    const [data, setData] = useState([]);
 
-        console.log(music);
-        console.log(musicList);
-        console.log("----------------------");
+    const getData = async () =>{
+        const repertorioSnapshot = await getDocs(collection(db, 'repertorio')).then();
+        let d = [];
+        repertorioSnapshot.forEach((doc) => {
+            //console.log(doc.id, ' => ', doc.data())
+            const musicas = {               
+            id: doc.id,
+            musicanome: doc.data().musicanome,
+            musicaartista: doc.data().musicaartista,
+            tagprimaria: doc.data().tagprimaria,
+            tagsecundaria: doc.data().tagsecundaria,
+        };
+        d.push(musicas);
+        //console.log(d);
+        setData(d);})
+        
+
+        
+        console.log("---------function-------------");
+
+
     };
+
+    useEffect(() => {getData()}, []);
+
+    const Item = ({ musicanome, musicaartista, tagprimaria, tagsecundaria }) => (
+        
+        <ItemView>
+                <MusicIdContainer>
+                    <MusicName>{musicanome}</MusicName>
+                    <MusicArtist>{musicaartista}</MusicArtist>
+                </MusicIdContainer>
+      
+                <SelectContainer>
+                    <MusicTagContainer>
+                        <TagPrimaria>{tagprimaria}</TagPrimaria>
+                        <TagSecundaria>{tagsecundaria}</TagSecundaria>
+                    </MusicTagContainer>
+                </SelectContainer>
+    
+                <BtnPedirMusica>
+                    <TextPedirMusica>Toca Essa!</TextPedirMusica>
+                </BtnPedirMusica>
+      
+      
+        </ItemView>
+      );
+    
+
+    const renderItem = ({item}) => (
+
+        <ItemContainer>
+            <Item 
+            musicanome={item.musicanome} 
+            musicaartista={item.musicaartista}
+            tagprimaria={item.tagprimaria}
+            tagsecundaria={item.tagsecundaria}
+            />      
+        </ItemContainer>
+      );
 
 //--------------ULTIMA TENTATIVA ESTÁVEL------------------//
 {/*}    const GetData = async () =>{
@@ -81,15 +137,20 @@ export default function TestpageScreen() {
 {*/}
 
     return (
-        <Sobreview source={imgbg}>
+<MusicList source={imgbg}>
 
-        <HeaderComponent/>
-        
-        <View>
-            <BtnEntrar title="getData" onPress={GetData}/>
+<HeaderComponent/>
 
-        </View>
+<Container>
+  <MusicFlatList
+    data={data}
+    renderItem={renderItem}
+    keyExtractor={item => item.id}
+  />
+</Container>
 
-        </Sobreview> 
+<FloatingButton style={{ bottom:100 }}/>
+
+</MusicList>
     )
 };
