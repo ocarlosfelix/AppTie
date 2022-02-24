@@ -1,37 +1,82 @@
-import { React, useState, useEffect } from 'react';
-import { View } from 'react-native';
-import { BtnEntrar } from '../../components/FormLogin/styles';
+import { React, View, Animated } from "react"
 import HeaderComponent from '../../components/HeaderComponent/index'
+import FloatingButton from "../../components/FloatingButton/floatingbutton"
+import { useNavigation } from '@react-navigation/native'
 import AppTieBG from '../../images/apptiebackground2.jpg'
-import { db } from '../../config/firebase';
-import { collection, getDocs, doc, setDoc } from 'firebase/firestore/lite';
-import { 
-    Sobreview,
+import { StatusBar } from 'expo-status-bar';
+import {AntDesign, Entypo } from '@expo/vector-icons'
+import ProfilePicture from '../../images/bannerapt.jpg'
+
+import { Homeview, 
+         BtnVerdeClaro, 
+         BtnVerdeEscuro, 
+         BtnText, 
+         ContadorContainer, 
+         ShowsContainer,
+         TextContador, 
+         PedidosContainer, 
+         MenuContainer, 
+         BtnRedesSociais, 
+         PainelRedesSociais, 
+         ProfilePicImage, 
+         ProfilePicText,
+         ProfileScreenView
 } from "./styles"
 
 export default function SobreScreen() {
 
-    const imgbg = AppTieBG
+    const navigation = useNavigation();
 
-    const GetData = async () =>{
-        const musicsCol = collection(db, 'repertorio');
-        const musicSnapshot = await getDocs(musicsCol);
-        const musicList = musicSnapshot.docs.map(doc => doc.data());
-
-        console.log(musicList);
-        console.log("ID da Musica: ", musicSnapshot.id);
+    const SobreClickPedirMusica = () => {
+        navigation.navigate('PedirMusica');
     }
 
-    return (
-        <Sobreview source={imgbg}>
+    const SobreClickSobre = () => {
+        navigation.navigate('Sobre');
+    }
 
-        <HeaderComponent/>
-        
-        <View>
-            <BtnEntrar title="getData" onPress={GetData}/>
+    const SobreClickRedes = () => {
+        navigation.navigate('Redes');
+    }
 
-        </View>
+    const SobreClickContratar = () => {
+        navigation.navigate('Contratar');
+    }
 
-        </Sobreview> 
+    const SobreClickAreaBanda = () => {
+        navigation.navigate('AreaBanda');
+    }
+
+    const imgbg = AppTieBG
+
+    return (       
+        <Homeview source={imgbg}>
+
+            <HeaderComponent/>
+
+            <ProfileScreenView>
+                    <ProfilePicImage source={ProfilePicture}></ProfilePicImage>
+            </ProfileScreenView>
+
+            <MenuContainer>
+                <BtnVerdeClaro>
+                        <BtnText>Documentos</BtnText>
+                </BtnVerdeClaro>
+                
+                <BtnVerdeClaro>
+                        <BtnText>Release</BtnText>
+                </BtnVerdeClaro>
+
+                <BtnVerdeClaro>
+                        <BtnText>Produtos</BtnText>
+                </BtnVerdeClaro>
+            </MenuContainer>
+
+            <FloatingButton style={{ bottom:100 }}/>
+
+            <StatusBar style="auto" />
+            
+       </Homeview> 
+
     )
 };

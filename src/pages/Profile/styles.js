@@ -1,10 +1,12 @@
 import styled from 'styled-components/native'
 
-export const Profileview = styled.View`
+export const Homeview = styled.ImageBackground`
 flex:1;
-padding-top:30px;
-alignItems:center;
-background-color:#fff;
+justify-content:flex-start
+align-items:center;
+paddingTop:30px;
+resize-mode:cover;
+width:100%;
 `
 
 export const Header = styled.View`
@@ -60,6 +62,13 @@ export const ShowsContainer = styled.View`
     justifyContent:center;
 `;
 
+export const MenuContainer = styled.View`
+flex:1;
+margin-top:30px;
+width:100%;
+align-items:center;
+`;
+
 export const PedidosContainer = styled.View`
     borderRadius:10px;        
     width:90%;
@@ -80,7 +89,7 @@ export const BtnVerdeClaro = styled.TouchableOpacity`
     borderRadius:10px;        
     width:90%;
     height:80px;
-    backgroundColor:#9dbb39;
+    backgroundColor:#154a02;
     marginLeft:12px;
     margin:10px;    
     alignItems:center;
@@ -102,3 +111,36 @@ export const BtnText = styled.Text`
     fontSize:20px;
     color:#FFF;
 `;
+
+export const BtnRedesSociais = styled.TouchableOpacity`
+    width:60px;
+    height:60px;
+    borderRadius: 30px;
+    margin:20px;
+    alignItems:center;
+    justifyContent:center;
+    background-color:#154a02;
+`;
+
+export const PainelRedesSociais = styled.View`
+    flex-direction:row;
+
+`;
+
+export const ProfileScreenView = styled.View`
+`
+
+export const ProfilePicImage = styled.Image`
+    margin-top:30px;
+    resize-mode:cover;    
+    height:150px;
+    width:150px;
+    background-color:#9dbb39;
+    border-color:#154a02;
+    border-width:5px;
+    border-radius:150px;
+`
+export const ProfilePicText = styled.Text`
+    fontSize:25px;
+    color:#FFF;
+`

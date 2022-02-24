@@ -1,4 +1,5 @@
 import { React, View, Animated } from "react"
+import { Linking, Alert } from "react-native"
 import HeaderComponent from '../../components/HeaderComponent/index'
 import FloatingButton from "../../components/FloatingButton/floatingbutton"
 import { useNavigation } from '@react-navigation/native'
@@ -34,7 +35,25 @@ export default function HomeScreen() {
     const SobreClickAreaBanda = () => {
         navigation.navigate('AreaBanda');
     }
+//Links para redes sociais//
+    const instagramURL = "https://www.instagram.com/appletiecwb/"
 
+    const facebookURL = "https://www.facebook.com/appletiecwb"
+
+    const youtubeURL = "https://www.youtube.com/channel/UCAgg2gy5a6A4aQkX9CayimA"
+
+       
+        const openUrl = async (url) => {
+            const isSupported = await Linking.canOpenURL(url);
+            if (isSupported) {
+                await Linking.openURL(url);
+            } else {
+                Alert.alert(`Vish, nem sei como abrir isso aí: ${url}`);
+            }
+            }
+
+
+//-----------------------//
     const imgbg = AppTieBG
 
     return (       
@@ -42,18 +61,7 @@ export default function HomeScreen() {
 
             <HeaderComponent/>
 
-{/*            <ContadorContainer>
-                <ShowsContainer>
-                    <TextContador>Shows assistidos: 47</TextContador>
-                </ShowsContainer>
-                    
-                <PedidosContainer>
-                 <TextContador>Músicas pedidas: 184</TextContador>
-                </PedidosContainer>
-            </ContadorContainer>
-*/}         
-
-<MenuContainer>
+            <MenuContainer>
 
             <BtnVerdeClaro onPress={ SobreClickPedirMusica }>
                     <BtnText>Pedir Musica</BtnText>
@@ -62,29 +70,27 @@ export default function HomeScreen() {
             <BtnVerdeClaro onPress={ SobreClickSobre }>
                     <BtnText>Sobre a Banda</BtnText>
             </BtnVerdeClaro>
-            
-{/*            <BtnVerdeClaro onPress={ SobreClickRedes }>
-                    <BtnText>Redes Sociais</BtnText>
-</BtnVerdeClaro> */}
-
 
             <BtnVerdeClaro onPress={ SobreClickContratar }>
                     <BtnText>Contratar</BtnText>
             </BtnVerdeClaro>
 
-<PainelRedesSociais>
-    <BtnRedesSociais>
-                    <AntDesign name="instagram" size={30} color="#fff" />
-    </BtnRedesSociais>
+            <PainelRedesSociais>
+                <BtnRedesSociais 
+                onPress={() => {openUrl(instagramURL)}}>
+                                <AntDesign name="instagram" size={30} color="#fff" />
+                </BtnRedesSociais>
 
-    <BtnRedesSociais>
-                    <Entypo name="facebook" size={30} color="#fff" />
-    </BtnRedesSociais>
+                <BtnRedesSociais
+                onPress={() => {openUrl(facebookURL)}}>
+                                <Entypo name="facebook" size={30} color="#fff" />
+                </BtnRedesSociais>
 
-    <BtnRedesSociais>
-                    <AntDesign name="youtube" size={30} color="#fff" />
-    </BtnRedesSociais>
-</PainelRedesSociais>
+                <BtnRedesSociais
+                onPress={() => {openUrl(youtubeURL)}}>
+                                <AntDesign name="youtube" size={30} color="#fff" />
+                </BtnRedesSociais>
+            </PainelRedesSociais>
 
             <BtnVerdeEscuro onPress={ SobreClickAreaBanda }>
                     <BtnText>Área da Banda</BtnText>

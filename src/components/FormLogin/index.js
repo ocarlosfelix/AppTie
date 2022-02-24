@@ -3,6 +3,7 @@ import { Formlogin, Emailinput, Passwordinput, BtnEntrar, BtnText } from "./styl
 import { useNavigation } from '@react-navigation/native'
 import { authentication } from '../../config/firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { Alert } from "react-native";
 
 
 export default function FormLogin(){
@@ -29,6 +30,8 @@ export default function FormLogin(){
        })
        .catch((err)=>{
            console.log(err);
+           Alert.alert("Dados Incorretos",
+                        "Confira seus dados e tente novamente")
        })
     };
     

@@ -43,7 +43,7 @@ export const ContadorContainer = styled.View`
 
     borderRadius:10px;        
     width:90%;
-    height:160px;
+    height:200px;
     backgroundColor:#154a02;
     marginLeft:12px;
     margin:10px;    

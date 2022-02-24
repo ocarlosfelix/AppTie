@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-export const Sobreview = styled.ImageBackground`
+export const Homeview = styled.ImageBackground`
 flex:1;
 justify-content:flex-start
 align-items:center;
@@ -8,6 +8,7 @@ paddingTop:30px;
 resize-mode:cover;
 width:100%;
 `
+
 export const Header = styled.View`
 flex-direction:row;
 justify-content: space-around;
@@ -38,155 +39,104 @@ fontSize:16px;
 color:#FFF;
 `;
 
-export const ContadorBox = styled.View`
-flex:1;
-flex-direction:column;
-fontSize:16px;
-color:#FFF;
+export const ContadorContainer = styled.View`
+
+    borderRadius:10px;        
+    width:90%;
+    height:160px;
+    backgroundColor:#154a02;
+    marginLeft:12px;
+    margin:10px;    
+    alignItems:center;
+    justifyContent:center;
 `;
 
-export const PedidosText = styled.Text`
-align-self:flex-end;
-margin-right:35px;
-fontSize:16px;
-color:#FFF;
+export const ShowsContainer = styled.View`
+    borderRadius:10px;        
+    width:90%;
+    height:40px;
+    backgroundColor:#9dbb39;
+    marginLeft:12px;
+    margin:10px;    
+    alignItems:center;
+    justifyContent:center;
 `;
 
-export const PedidosNum = styled.Text`
-align-self:flex-end;
-margin-right:43px;
-fontSize:16px;
-color:#0f0;
-`;
-
-export const SearchContainer = styled.View`
-flexDirection:row;
-justifyContent:center;
-alignItems: center;
-
-
-`;
-
-export const SearchBar = styled.TextInput`
-borderRadius:10px;
-align-self:center;
-backgroundColor:#EEE;
-height:40px;
-margin:10px;
-width:80%;
-paddingLeft:10px;
-
-
-`;
-export const SearchBoxIcon = styled.Image`
-width:20px;
-height:20px;
-padding: 10px;
-`;
-
-export const SearchBoxText = styled.Text`
-
-`;
-
-export const MusicRow = styled.View`
-
-`;
-
-export const Scroll = styled.ScrollView`
-    width:100%;
-`;
-
-export const Item = styled.View`
-padding:10px;
-flex-direction:row;
-marginBottom:5px;
-marginTop:5px;
-backgroundColor: rgba(255, 255, 255, 0.7);
-`;
-
-export const ItemText = styled.Text`
-font-weight:bold;
-font-size:16px;
-color:#000;
-`;
-export const MusicIdContainer = styled.View`
-flex:3;
-flex-direction:column;
-`;
-
-
-export const MusicName = styled.Text`
-font-weight:bold;
-font-size:20px;
-color:#222;
-`;
-
-export const MusicArtist = styled.Text`
-font-style:italic;
-font-size:16px;
-color:#222;
-
-`;
-
-export const SelectContainer= styled.View`
-
-`;
-
-TagContainer
-export const TagContainer = styled.View`
-flex:1;
-justify-content:flex-end;
-align-items:flex-end;
-flex-direction:row;
-font-style:italic;
-font-size:16px;
-color:#888;
-`;
-
-export const PrimeiraTag = styled.Text`
-background-color:#AA9052;
-border-radius:5px;
-justify-content:center;
-padding-left:5px;
-padding-right:5px;
-margin-right:5px;
-font-style:italic;
-font-size:10px;
-color:#CCC;
-`;
-
-export const SegundaTag = styled.Text`
-background-color:#AA8688;
-border-radius:5px;
-justify-content:center;
-padding-left:5px;
-padding-right:5px;
-font-style:italic;
-font-size:10px;
-color:#CCC;
-`;
-
-export const BtnPedirMusica = styled.TouchableOpacity`
-flex:1;
-borderRadius:10px;        
-width:100px;
-height:50px;
-backgroundColor:#154a02;
-marginLeft:12px;
-alignItems:center;
-justifyContent:center;
-`;
-
-
-export const TextPedirMusica= styled.Text`
-fontSize:15px;
-color:#FFF;
-`;
-
-
-export const FooterMenu= styled.View`
+export const MenuContainer = styled.View`
 width:100%;
-height:85px;
-background-color:#154a02;
+align-items:center;
 `;
 
+export const PedidosContainer = styled.View`
+    borderRadius:10px;        
+    width:90%;
+    height:40px;
+    backgroundColor:#9dbb39;
+    marginLeft:12px;
+    margin:10px;    
+    alignItems:center;
+    justifyContent:center;
+`;
+
+export const TextContador = styled.Text`
+    fontSize:20px;
+    color:#FFF;
+`;
+
+export const BtnVerdeClaro = styled.TouchableOpacity`
+    borderRadius:10px;        
+    width:90%;
+    height:80px;
+    backgroundColor:#154a02;
+    marginLeft:12px;
+    margin:10px;    
+    alignItems:center;
+    justifyContent:center;
+`;
+
+export const BtnVerdeEscuro = styled.TouchableOpacity`
+    borderRadius:10px;        
+    width:90%;
+    height:40px;
+    backgroundColor:#154a02;
+    marginLeft:12px;
+    margin:10px;    
+    alignItems:center;
+    justifyContent:center;
+`;
+
+export const BtnText = styled.Text`
+    fontSize:20px;
+    color:#FFF;
+`;
+
+export const BtnRedesSociais = styled.TouchableOpacity`
+    width:60px;
+    height:60px;
+    borderRadius: 30px;
+    margin:20px;
+    alignItems:center;
+    justifyContent:center;
+    background-color:#154a02;
+`;
+
+export const PainelRedesSociais = styled.View`
+    flex-direction:row;
+
+`;
+
+export const ProfileScreenView = styled.View`
+resize-mode:contain;
+margin-top:16px;
+
+`;
+
+export const ProfilePicImage = styled.Image` 
+resize-mode:contain;
+height:32%;
+    
+`;
+export const ProfilePicText = styled.Text`
+    fontSize:25px;
+    color:#FFF;
+`;

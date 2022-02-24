@@ -28,14 +28,28 @@ function AreaBandaScreen() {
             <ShowsContainer>
                 <TextContador>AREA DA BANDA</TextContador>
             </ShowsContainer>
-                
-            <PedidosContainer>
-             <TextContador>Músicas pedidas: 184</TextContador>
-            </PedidosContainer>
-        </ContadorContainer>
+            <ShowsContainer>
+                <TextContador>Dobrucki 05/06/2022</TextContador>
+            </ShowsContainer>
+            <ShowsContainer>
+                <TextContador>AREA DA BANDA</TextContador>
+            </ShowsContainer>
+         </ContadorContainer>
         
         <BtnVerdeEscuro onPress={ handleSobreClick }>
             <BtnText>Adicionar Música</BtnText>
+        </BtnVerdeEscuro>
+
+        <BtnVerdeEscuro onPress={ handleSobreClick }>
+            <BtnText>Novo Show</BtnText>
+        </BtnVerdeEscuro>
+
+        <BtnVerdeEscuro onPress={ handleSobreClick }>
+            <BtnText>Encerrar Show</BtnText>
+        </BtnVerdeEscuro>
+
+        <BtnVerdeEscuro onPress={ handleSobreClick }>
+            <BtnText>Métricas</BtnText>
         </BtnVerdeEscuro>
 
         <StatusBar style="auto" />

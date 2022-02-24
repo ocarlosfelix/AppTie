@@ -26,7 +26,7 @@ export default class FloatingButton extends React.Component {
             {
                 translateY: this.animation.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [0, -80]
+                    outputRange: [0, -100]
                 })
             }
         ]
@@ -36,9 +36,9 @@ export default class FloatingButton extends React.Component {
         transform: [
             { scale: this.animation},
             {
-                translateY: this.animation.interpolate({
+                translateX: this.animation.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [0, -140]
+                    outputRange: [0, 100]
                 })
             }
         ]
@@ -48,9 +48,9 @@ export default class FloatingButton extends React.Component {
         transform: [
             { scale: this.animation},
             {
-                translateY: this.animation.interpolate({
+                translateX: this.animation.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [0, -200]
+                    outputRange: [0, -100]
                 })
             }
         ]
@@ -76,18 +76,21 @@ export default class FloatingButton extends React.Component {
                 <TouchableWithoutFeedback>
                     <Animated.View style={[styles.button, styles.secondary, typingStyle ]}>
                         <Entypo name="typing" size={20} color="#154a02" />
+                        <Text>Mensagem</Text>
                     </Animated.View>
                 </TouchableWithoutFeedback>
                 
                 <TouchableWithoutFeedback>
                     <Animated.View style={[styles.button, styles.secondary, creditStyle ]}>
                         <Entypo name="credit" size={20} color="#154a02" />
+                        <Text>Doar</Text>
                     </Animated.View>
                 </TouchableWithoutFeedback>
                 
                 <TouchableWithoutFeedback>
                     <Animated.View style={[styles.button, styles.secondary, plusStyle ]}>
                         <Entypo name="plus" size={20} color="#154a02" />
+                        <Text>Sugerir Música</Text>
                     </Animated.View>
                 </TouchableWithoutFeedback>
 
@@ -122,8 +125,8 @@ const styles = StyleSheet.create({
         backgroundColor:"#154a02",
     },
     secondary:{
-        width: 48,
-        height:48,
+        width: 75,
+        height:75,
         borderRadius: 48/2,
         backgroundColor: "#9dbb39"
     }
