@@ -26,7 +26,7 @@ align-items:center;
 `;
 
 export const MenuContainer = styled.View`
-flex:1;
+flex:3;
 width:100%;
 align-items:center;
 `;
@@ -45,6 +45,11 @@ export const BtnVerdeClaro = styled.TouchableOpacity`
 export const BtnText = styled.Text`
     fontSize:20px;
     color:#FFF;
+`;
+
+export const BtnDescript = styled.Text`
+    fontSize:16px;
+    color:#888;
 `;
 
 export const ProfileScreenView = styled.View`

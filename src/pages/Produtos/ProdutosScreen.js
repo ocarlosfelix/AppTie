@@ -18,7 +18,7 @@ import { Sobreview,
          DescriptContainer
 } from "./styles"
 
-export default function SobreScreen() {
+export default function ProdutosScreen() {
 
     const navigation = useNavigation();
 
@@ -52,15 +52,15 @@ export default function SobreScreen() {
             </ProfileScreenView>
 
             <MenuContainer>
-                <BtnVerdeClaro onPress={ SobreClickDocumentos }>
+                <BtnVerdeClaro>
                         <BtnText>Documentos</BtnText>
                 </BtnVerdeClaro>
                 
-                <BtnVerdeClaro onPress={ SobreClickRelease }>
+                <BtnVerdeClaro>
                         <BtnText>Press Release</BtnText>
                 </BtnVerdeClaro>
 
-                <BtnVerdeClaro onPress={ SobreClickProdutos }>
+                <BtnVerdeClaro>
                         <BtnText>Produtos</BtnText>
                 </BtnVerdeClaro>
             </MenuContainer>

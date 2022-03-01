@@ -5,6 +5,10 @@ width:100%;
 justify-content:flex-start;
 `;
 
+export const Scroll = styled.ScrollView`
+width:100%;
+`;
+
 export const FormTag = styled.Text`
     fontSize:20px;
     font-weight:bold;

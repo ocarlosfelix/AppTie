@@ -1,4 +1,4 @@
-import styled from 'styled-components/native'
+import styled from "styled-components/native";
 
 export const Formlogin = styled.View`
 justify-content:flex-start
@@ -6,34 +6,66 @@ align-items:center;
 `;
 
 export const Emailinput = styled.TextInput`
-    borderRadius:10px;
-    backgroundColor:#fff;
-    height:40px;
-    margin:10px;
-    width:300px;
-    paddingLeft:10px;
-
+  border-radius: 10px;
+  background-color: #fff;
+  height: 40px;
+  margin: 10px;
+  width: 300px;
+  padding-left: 10px;
 `;
 
 export const Passwordinput = styled.TextInput`
-    borderRadius:10px;
-    backgroundColor:#fff;
-    height:40px;
-    margin:10px;
-    width:300px;
-    paddingLeft:10px;
+  border-radius: 10px;
+  background-color: #fff;
+  height: 40px;
+  margin: 10px;
+  width: 300px;
+  padding-left: 10px;
 `;
 export const BtnEntrar = styled.TouchableOpacity`
-    borderRadius:10px;        
-    width:300px;
-    height:40px;
-    backgroundColor:#9dbb39;
-    marginLeft:12px;
-    margin:10px;    
-    alignItems:center;
-    justifyContent:center;
+  border-radius: 10px;
+  width: 300px;
+  height: 40px;
+  background-color: #9dbb39;
+  margin-left: 12px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
 `;
 export const BtnText = styled.Text`
-    fontSize:20px;
-    color:#FFF;
+  font-size: 20px;
+  color: #fff;
+`;
+export const BtnLogingoogle = styled.TouchableOpacity`
+  align-items: center;
+  width: 300px;
+`;
+
+export const Logingoogle = styled.Image`
+  resize-mode: contain;
+  height: 40px;
+  width: 300px;
+  margin: 10px;
+`;
+
+export const BtnLoginfacebook = styled.TouchableOpacity`
+  align-items: center;
+  width: 300px;
+`;
+
+export const Loginfacebook = styled.Image`
+  resize-mode: contain;
+  height: 40px;
+  width: 300px;
+  margin: 10px;
+`;
+export const BtnCadastro = styled.TouchableOpacity`
+  align-items: center;
+  width: 300px;
+`;
+export const Textocadastrar = styled.Text`
+  margin: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
 `;

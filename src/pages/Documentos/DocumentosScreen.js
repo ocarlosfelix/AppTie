@@ -15,10 +15,11 @@ import { Sobreview,
          MenuContainer,
          ProfilePicImage,
          ProfileScreenView,
-         DescriptContainer
+         DescriptContainer,
+         BtnDescript
 } from "./styles"
 
-export default function SobreScreen() {
+export default function DocumentosScreen() {
 
     const navigation = useNavigation();
 
@@ -40,28 +41,33 @@ export default function SobreScreen() {
             <HeaderComponent/>
 
             <ProfileScreenView>
-                    <HeaderText>A MENOR BANDA SHOW DO SUL DO MUNDO!</HeaderText>
-                    <ProfilePicImage source={ProfilePicture}></ProfilePicImage>
+                    <HeaderText>DOCUMENTOS</HeaderText>
                     <DescriptContainer>   
-                        <HeaderText>DE PUNK A FUNK!</HeaderText>
-                        <DescriptText>Tocamos um pouco de tudo pra não deixar</DescriptText>
-                        <DescriptText>NINGUÉM PARADO!</DescriptText>
-                        <DescriptText>Tá procurando um show diferenciado? </DescriptText>
-                        <DescriptText>Vem com a gente e SEJA MUITO BEM VINDO! </DescriptText>
+                        <DescriptText>Se você chegou até aqui, provavelmente está </DescriptText>
+                        <DescriptText>querendo saber um pouco mais sobre a parte técnica dos nossos shows.</DescriptText>
+                        <DescriptText>Aqui você encontrará todos os detalhes necessários. </DescriptText>
+                        <DescriptText>Se sentir que falta alguma informação, por favor nos mande uma mensagem</DescriptText>
                     </DescriptContainer> 
             </ProfileScreenView>
 
             <MenuContainer>
-                <BtnVerdeClaro onPress={ SobreClickDocumentos }>
-                        <BtnText>Documentos</BtnText>
+                <BtnVerdeClaro>
+                        <BtnText>Mapa de Palco</BtnText>
+                        <BtnDescript>Baixar PDF</BtnDescript>
                 </BtnVerdeClaro>
                 
-                <BtnVerdeClaro onPress={ SobreClickRelease }>
-                        <BtnText>Press Release</BtnText>
+                <BtnVerdeClaro>
+                        <BtnText>Input List</BtnText>
+                        <BtnDescript>Baixar PDF</BtnDescript>
                 </BtnVerdeClaro>
 
-                <BtnVerdeClaro onPress={ SobreClickProdutos }>
-                        <BtnText>Produtos</BtnText>
+                <BtnVerdeClaro>
+                        <BtnText>Monitor List</BtnText>
+                        <BtnDescript>Baixar PDF</BtnDescript>
+                </BtnVerdeClaro>
+
+                <BtnVerdeClaro>
+                        <BtnText>Informações Importantes</BtnText>
                 </BtnVerdeClaro>
             </MenuContainer>
 

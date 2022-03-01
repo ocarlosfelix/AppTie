@@ -11,7 +11,8 @@ import { Formcadastro,
          BtnText, 
          FormTag,
          Telefoneinput,  
-         InputText} from "./styles"
+         InputText,
+         Scroll} from "./styles"
 import { collection, Firestore } from "firebase/firestore/lite";
 import { FirebaseError } from "firebase/app";
 
@@ -48,6 +49,7 @@ const registerUser = ()=>{
 
 
     return(
+        <Scroll>
         <Formcadastro>
 
             <FormTag>Nome Completo</FormTag>
@@ -89,6 +91,6 @@ const registerUser = ()=>{
 
 
         </Formcadastro>
-        
+        </Scroll>
     )
 }
