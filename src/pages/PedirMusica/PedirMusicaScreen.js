@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
-import { Alert, View } from "react-native";
-import { BtnEntrar } from "../../components/FormLogin/styles";
+import Modal from "react-native-modal";
+import { Button, Text, View } from "react-native";
+import { BtnEntrar, BtnText } from "../../components/FormLogin/styles";
 import HeaderComponent from "../../components/HeaderComponent/index";
 import AppTieBG from "../../images/apptiebackground2.jpg";
 import FloatingButton from "../../components/FloatingButton/floatingbutton";
@@ -34,14 +35,92 @@ import {
   SearchBoxIcon,
   SearchMenu,
   OrderButton,
+  ModalView,
+  ModalText,
+  OrderModal,
+  BtnOrdenar,
+  ModalBtnContainer,
 } from "./styles";
 
 export default function TestpageScreen() {
   const imgbg = AppTieBG;
 
+  const [isModalVisible, setModalVisible] = useState(false);
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
   const [data, setData] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [list, setList] = useState(data);
+  //componentes da troca de botão para ordenação
+  const SortMusicaNomeAB = () => {
+    let listaOrganizada = [...data];
+    listaOrganizada.sort((a, b) => {
+      if (a.musicanome > b.musicanome) {
+        return 1;
+      } else {
+        if (b.musicanome > a.musicanome) {
+          return -1;
+        } else {
+          return 0;
+        }
+      }
+    });
+
+    setList(listaOrganizada);
+  };
+
+  const SortMusicaArtistaAB = () => {
+    let listaOrganizada = [...data];
+    listaOrganizada.sort((a, b) => {
+      if (a.musicaartista > b.musicaartista) {
+        return 1;
+      } else {
+        if (b.musicaartista > a.musicaartista) {
+          return -1;
+        } else {
+          return 0;
+        }
+      }
+    });
+
+    setList(listaOrganizada);
+  };
+
+  const SortTagPrimariaAB = () => {
+    let listaOrganizada = [...data];
+    listaOrganizada.sort((a, b) => {
+      if (a.tagprimaria > b.tagprimaria) {
+        return 1;
+      } else {
+        if (b.tagprimaria > a.tagprimaria) {
+          return -1;
+        } else {
+          return 0;
+        }
+      }
+    });
+
+    setList(listaOrganizada);
+  };
+
+  const SortTagSecundariaAB = () => {
+    let listaOrganizada = [...data];
+    listaOrganizada.sort((a, b) => {
+      if (a.tagsecundaria > b.tagsecundaria) {
+        return 1;
+      } else {
+        if (b.tagsecundaria > a.tagsecundaria) {
+          return -1;
+        } else {
+          return 0;
+        }
+      }
+    });
+
+    setList(listaOrganizada);
+  };
 
   //componente que recebe a lista do repertorio
   const getData = async () => {
@@ -78,7 +157,7 @@ export default function TestpageScreen() {
   }, []);
 
   //componente de orgazinação da lista
-  const handleOrderClick = () => {
+  const modalListOrder = () => {
     let listaOrganizada = [...data];
 
     listaOrganizada.sort((a, b) => {
@@ -201,6 +280,68 @@ export default function TestpageScreen() {
 
   return (
     <MusicList source={imgbg}>
+      <View>
+        <Modal
+          isVisible={isModalVisible}
+          onBackdropPress={() => {
+            toggleModal();
+          }}
+          backdropColor="#154a02"
+          animationIn="slideInUp"
+          animationOut="slideOutDown"
+          useNativeDriverForBackdrop={true}
+        >
+          <ModalView>
+            <ModalText>Ordenar lista por:</ModalText>
+            <ModalBtnContainer>
+              <BtnOrdenar
+                onPress={() => {
+                  SortMusicaNomeAB();
+                  toggleModal();
+                }}
+              >
+                <BtnText>Música</BtnText>
+              </BtnOrdenar>
+
+              <BtnOrdenar
+                onPress={() => {
+                  SortMusicaArtistaAB();
+                  toggleModal();
+                }}
+              >
+                <BtnText>Artista</BtnText>
+              </BtnOrdenar>
+            </ModalBtnContainer>
+            <ModalBtnContainer>
+              <BtnOrdenar
+                onPress={() => {
+                  SortTagPrimariaAB();
+                  toggleModal();
+                }}
+              >
+                <BtnText>Estilo</BtnText>
+              </BtnOrdenar>
+
+              <BtnOrdenar
+                onPress={() => {
+                  SortTagSecundariaAB();
+                  toggleModal();
+                }}
+              >
+                <BtnText>Nacional</BtnText>
+              </BtnOrdenar>
+            </ModalBtnContainer>
+            <BtnOrdenar
+              onPress={() => {
+                toggleModal();
+              }}
+            >
+              <BtnText>Cancelar</BtnText>
+            </BtnOrdenar>
+          </ModalView>
+        </Modal>
+      </View>
+
       <HeaderComponent />
 
       <SearchContainer>
@@ -211,7 +352,7 @@ export default function TestpageScreen() {
         ></SearchBar>
 
         <SearchMenu>
-          <OrderButton onPress={handleOrderClick}>
+          <OrderButton onPress={toggleModal}>
             <Entypo name="sound-mix" size={20} color="#154a02" />
           </OrderButton>
         </SearchMenu>

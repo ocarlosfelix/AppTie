@@ -139,7 +139,7 @@ justify-content:center;
 export const BtnOrdenar = styled.TouchableOpacity`
   flex: 1;
   border-radius: 10px;
-  width: 310px;
+  width: 275px;
   max-height: 30px;
   background-color: #154a02;
   margin: 5px;
@@ -168,14 +168,13 @@ export const OrderModal = styled.Modal`
 `;
 
 export const ModalView = styled.View`
-  background-color: white;
+  background-color: #9dbb5a;
   height: 200px;
   width: 80%;
   border-radius: 30px;
   justify-content: center;
   align-items: center;
   align-self: center;
-  margin-top: 375px;
   padding: 10px;
 `;
 export const ModalText = styled.Text`

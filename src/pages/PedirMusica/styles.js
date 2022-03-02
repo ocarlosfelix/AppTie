@@ -1,4 +1,5 @@
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { Modal } from "react-native-modal";
 import styled from "styled-components/native";
 
 export const Sobreview = styled.ImageBackground`
@@ -135,6 +136,19 @@ align-items:center;
 justify-content:center;
 `;
 
+export const BtnOrdenar = styled.TouchableOpacity`
+  flex: 1;
+  border-radius: 10px;
+  width: 275px;
+  max-height: 30px;
+  background-color: #154a02;
+  margin: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const TextPedirMusica = styled.Text`
   font-size: 15px;
   color: #fff;
@@ -146,4 +160,30 @@ export const SearchMenu = styled.View`
 
 export const OrderButton = styled.TouchableOpacity`
   margin-left: 15px;
+  max-height: 30px;
+`;
+
+export const OrderModal = styled.Modal`
+  flex-direction: row;
+`;
+
+export const ModalView = styled.View`
+  background-color: #9dbb5a;
+  height: 200px;
+  width: 80%;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 10px;
+`;
+export const ModalText = styled.Text`
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
+`;
+
+export const ModalBtnContainer = styled.View`
+  flex-direction: row;
+  margin: 5px;
 `;

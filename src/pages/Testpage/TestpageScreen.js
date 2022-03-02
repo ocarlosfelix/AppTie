@@ -1,5 +1,6 @@
-import { React, useState, useEffect, Text } from "react";
-import { Modal } from "react-native-modal";
+import { React, useState, useEffect } from "react";
+import Modal from "react-native-modal";
+import { Button, Text, View } from "react-native";
 import { BtnEntrar, BtnText } from "../../components/FormLogin/styles";
 import HeaderComponent from "../../components/HeaderComponent/index";
 import AppTieBG from "../../images/apptiebackground2.jpg";
@@ -44,10 +45,14 @@ import {
 export default function TestpageScreen() {
   const imgbg = AppTieBG;
 
+  const [isModalVisible, setModalVisible] = useState(false);
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
   const [data, setData] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [list, setList] = useState(data);
-  const [visible, setVisible] = useState(false);
   //componentes da troca de botão para ordenação
   const SortMusicaNomeAB = () => {
     let listaOrganizada = [...data];
@@ -275,63 +280,67 @@ export default function TestpageScreen() {
 
   return (
     <MusicList source={imgbg}>
-      <OrderModal
-        visible={visible}
-        transparent={true}
-        animationType={"slide"}
-        onBackdropPress={() => {
-          setVisible(false);
-        }}
-      >
-        <ModalView>
-          <ModalText>Ordenar lista por:</ModalText>
-          <ModalBtnContainer>
-            <BtnOrdenar
-              onPress={() => {
-                SortMusicaNomeAB();
-                setVisible(false);
-              }}
-            >
-              <BtnText>Música</BtnText>
-            </BtnOrdenar>
+      <View>
+        <Modal
+          isVisible={isModalVisible}
+          onBackdropPress={() => {
+            toggleModal();
+          }}
+          backdropColor="#154a02"
+          animationIn="slideInUp"
+          animationOut="slideOutDown"
+          useNativeDriverForBackdrop={true}
+        >
+          <ModalView>
+            <ModalText>Ordenar lista por:</ModalText>
+            <ModalBtnContainer>
+              <BtnOrdenar
+                onPress={() => {
+                  SortMusicaNomeAB();
+                  toggleModal();
+                }}
+              >
+                <BtnText>Música</BtnText>
+              </BtnOrdenar>
 
-            <BtnOrdenar
-              onPress={() => {
-                SortMusicaArtistaAB();
-                setVisible(false);
-              }}
-            >
-              <BtnText>Artista</BtnText>
-            </BtnOrdenar>
-          </ModalBtnContainer>
-          <ModalBtnContainer>
-            <BtnOrdenar
-              onPress={() => {
-                SortTagPrimariaAB();
-                setVisible(false);
-              }}
-            >
-              <BtnText>Estilo</BtnText>
-            </BtnOrdenar>
+              <BtnOrdenar
+                onPress={() => {
+                  SortMusicaArtistaAB();
+                  toggleModal();
+                }}
+              >
+                <BtnText>Artista</BtnText>
+              </BtnOrdenar>
+            </ModalBtnContainer>
+            <ModalBtnContainer>
+              <BtnOrdenar
+                onPress={() => {
+                  SortTagPrimariaAB();
+                  toggleModal();
+                }}
+              >
+                <BtnText>Estilo</BtnText>
+              </BtnOrdenar>
 
+              <BtnOrdenar
+                onPress={() => {
+                  SortTagSecundariaAB();
+                  toggleModal();
+                }}
+              >
+                <BtnText>Nacional</BtnText>
+              </BtnOrdenar>
+            </ModalBtnContainer>
             <BtnOrdenar
               onPress={() => {
-                SortTagSecundariaAB();
-                setVisible(false);
+                toggleModal();
               }}
             >
-              <BtnText>Nacional</BtnText>
+              <BtnText>Cancelar</BtnText>
             </BtnOrdenar>
-          </ModalBtnContainer>
-          <BtnOrdenar
-            onPress={() => {
-              setVisible(false);
-            }}
-          >
-            <BtnText>Cancelar</BtnText>
-          </BtnOrdenar>
-        </ModalView>
-      </OrderModal>
+          </ModalView>
+        </Modal>
+      </View>
 
       <HeaderComponent />
 
@@ -343,11 +352,7 @@ export default function TestpageScreen() {
         ></SearchBar>
 
         <SearchMenu>
-          <OrderButton
-            onPress={() => {
-              setVisible(true);
-            }}
-          >
+          <OrderButton onPress={toggleModal}>
             <Entypo name="sound-mix" size={20} color="#154a02" />
           </OrderButton>
         </SearchMenu>
