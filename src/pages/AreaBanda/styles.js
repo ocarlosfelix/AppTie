@@ -319,3 +319,42 @@ export const ModalBtnContainer = styled.View`
   flex-direction: row;
   margin: 5px;
 `;
+
+// componentes do datetimepicker
+export const DateTimePickerContainer = styled.View`
+  flex: 1;
+  alignitems: center;
+  justifycontent: center;
+`;
+
+export const PainelDateTime = styled.View`
+  flex: 1;
+  align-items: center;
+  margin: 10px;
+  margin-bottom: 20px;
+`;
+
+export const TextDateTime = styled.Text`
+  font-weight: bold;
+  align-self: flex-start;
+  flex: 2;
+  margin-left: 10px;
+  font-size: 20px;
+  color: #154a02;
+`;
+
+export const DatePickerContainer = styled.View`
+  flex: 1;
+  flex-direction: row;
+  alignitems: center;
+  justifycontent: center;
+`;
+export const BtnPicker = styled.TouchableOpacity`
+  borderradius: 10px;
+  width: 90%;
+  height: 40px;
+  backgroundcolor: #154a02;
+  alignitems: center;
+  justifycontent: center;
+  align-self: center;
+`;
