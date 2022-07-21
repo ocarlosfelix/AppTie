@@ -1,12 +1,7 @@
 import { React, ImageBackground, useState, useEffect } from "react";
 import AppTieBG from "../../images/apptiebackground2.jpg";
 import HeaderComponent from "../../components/HeaderComponent/index";
-import {
-  db,
-  database,
-  appfirebase,
-  serverTimestamp,
-} from "../../config/firebase";
+import { db, database, appfirebase } from "../../config/firebase";
 import {
   setDoc,
   addDoc,
@@ -32,36 +27,28 @@ import {
   TextoBtn,
 } from "./styles";
 import { FirebaseError } from "firebase/app";
-import { Timestamp } from "firebase/firestore";
 
 const imgbg = AppTieBG;
 
 export default function AdicionarShowScreen() {
   const [showLocal, setShowLocal] = useState("");
   const [showData, setShowData] = useState("");
-  const [showHoraInicio, setShowHoraInicio] = useState("");
-  const [showHoraFim, setShowHoraFim] = useState("");
-  const [showPedidos, setShowPedidos] = useState([]);
-  const [showAtivo, setShowAtivo] = useState(false);
-  const datashow = Timestamp.fromDate(new Date(showData));
+  const [musicTagPrimaria, setMusicTagPrimaria] = useState("");
+  const [musicTagSecundaria, setMusicTagSecundaria] = useState("");
 
   const PostData = async () => {
     const repReference = await addDoc(collection(db, "shows"), {
       showlocal: showLocal,
-      showdata: datashow,
-      showhorainicio: showHoraInicio,
-      showhorafim: showHoraFim,
-      showpedidos: showPedidos,
-      showativo: showAtivo,
+      showdata: showData,
+      tagprimaria: musicTagPrimaria,
+      tagsecundaria: musicTagSecundaria,
     });
 
-    console.log("ID do show: ", repReference.id);
+    console.log("ID da Musica: ", repReference.id);
     console.log("showlocal: " + showLocal);
     console.log("showdata: " + showData);
-    console.log("showhorainicio: " + showHoraInicio);
-    console.log("showhorafim: " + showHoraFim);
-    console.log("showpedidos: " + showPedidos);
-    console.log("showativo: " + showAtivo);
+    console.log("tagprimaria: " + musicTagPrimaria);
+    console.log("tagsecundaria: " + musicTagSecundaria);
   };
 
   return (
@@ -87,18 +74,28 @@ export default function AdicionarShowScreen() {
         </InputView>
         <InputArtistName
           placeholder='Digite a data do show'
-          onChangeText={(text) => setShowData(VarDate)}
+          onChangeText={(text) => setShowData(text)}
           value={showData}
         />
 
         <InputView>
-          <InputTitle>Hora de Início:</InputTitle>
-          <InputTitle> {showHoraInicio}</InputTitle>
+          <InputTitle>Tag Primária:</InputTitle>
+          <InputTitle> {musicTagPrimaria}</InputTitle>
         </InputView>
         <InputTagPrimariaName
-          placeholder='Qual é o horário de início?'
-          onChangeText={(text) => setShowHoraInicio(text)}
-          value={showHoraInicio}
+          placeholder='Qual é o estilo predominante?'
+          onChangeText={(text) => setMusicTagPrimaria(text)}
+          value={musicTagPrimaria}
+        />
+
+        <InputView>
+          <InputTitle>Tag Secundária:</InputTitle>
+          <InputTitle> {musicTagSecundaria}</InputTitle>
+        </InputView>
+        <InputTagSecundariaName
+          placeholder='Qual é o estilo secundário?'
+          onChangeText={(text) => setMusicTagSecundaria(text)}
+          value={musicTagSecundaria}
         />
 
         <BtnIncluirMusica onPress={PostData}>
